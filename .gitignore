@@ -17,3 +17,6 @@ npm-debug.log*
 
 # Data Mongodb
 data/
+
+# File directory
+public/upload/
