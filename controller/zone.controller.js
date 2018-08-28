@@ -2,7 +2,7 @@ let Zone = require('../model/zone.model');
 
 async function getZones(req, res) {
     try {
-        let zones = Zone.find({});
+        let zones = Zone.find({}).populate([{path: 'cities'}]);
         if (!zones) {
             return res.status(404).json({message: 'Zones not found'});
         }
