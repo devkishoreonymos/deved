@@ -64,8 +64,8 @@ async function createZones() {
 }
 
 function setZone(zoneArray, name) {
-    for (let i = 0; i < zoneArray.length; i++) {
-        zoneArray[i][zone] = name;
+    for (let i = 0; i < zoneArray.cities.length; i++) {
+        zoneArray.cities[i].zone = name;
     }
 }
 
