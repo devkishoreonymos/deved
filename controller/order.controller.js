@@ -2,6 +2,10 @@ let Order = require('../model/order.model');
 
 async function createOrder(req, res) {
     try {
+        let user = res.locals.user;
+        if (user.role !== 'deo') {
+            return res.status(401).json({message: 'forbidden'});
+        }
         let order = new Order(req.body);
         let count = Order.count();
         order.auditorId = createAuditorId(order.city, count);
