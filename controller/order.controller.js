@@ -48,9 +48,10 @@ async function getOrders(req, res) {
 
         let orders;
         if (user.role === 'client') {
-            orders = await Order.find({approved: 'accepted'});
+            req.query.approved = 'accepted';
+            orders = await Order.find(req.query);
         } else {
-            orders = await Order.find({});
+            orders = await Order.find(req.query);
         }
 
         res.status(200).json(orders);

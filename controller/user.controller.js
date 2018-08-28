@@ -6,6 +6,7 @@ async function userSignIn(req, res) {
 
         let {userId, password} = req.body;
 
+        console.log(req.body);
         let user = await User.findOne({userId, password});
 
 
@@ -14,11 +15,11 @@ async function userSignIn(req, res) {
         } else {
             user = user.toObject();
             delete user.password;
-            console.log(user);
+
             res.status(200).json({
                 user: user,
                 token: encrypt(user._id)
-            })
+            });
         }
     } catch (err) {
         console.log(err);
