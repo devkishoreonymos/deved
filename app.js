@@ -11,6 +11,7 @@ let {seedDb} = require('./helper/seedDb');
 let orderRouter = require('./routes/order');
 let userRouter = require('./routes/users');
 let indexRouter = require('./routes/index');
+let utilRouter = require('./routes/utils.routes');
 
 var app = express();
 
@@ -28,8 +29,8 @@ app.use(cookieParser());
 app.use('/', indexRouter);
 
 app.use('/api/users', userRouter);
-
 app.use('/api/orders', orderRouter);
+app.use('/api/utils', utilRouter);
 app.use(express.static(path.join(__dirname, 'public')));
 
 
