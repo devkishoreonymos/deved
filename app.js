@@ -6,6 +6,8 @@ var logger = require('morgan');
 let bluebird = require('bluebird');
 let mongoose = require('mongoose');
 
+let {seedDb} = require('./helper/seedDb');
+
 let orderRouter = require('./routes/order');
 let userRouter = require('./routes/users');
 let indexRouter = require('./routes/index');
@@ -55,12 +57,12 @@ function setUpMongo() {
     let mongoOptions = {
         useNewUrlParser: true
     };
-    mongoose.connect(`mongodb://localhost:27017/deved`, mongoOptions, () => {
-        mongoose.connection.db.dropDatabase();
-    });
+    mongoose.connect(`mongodb://localhost/deved`, mongoOptions);
 
     mongoose.connection.on('error', (err) => {
         console.error(`Mongodb connection error ${err}`);
         process.exit(-1);
     });
+
+    seedDb();
 }

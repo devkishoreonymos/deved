@@ -9,6 +9,7 @@ let orderSchema = new Schema({
     orderId: {type: String},
     shopperName: {type: String},
     city: {type: String},
+    townClass: {type: String},
     zone: {type: String},
     orderDate: {type: Date},
     dispatchDate: {type: Date},

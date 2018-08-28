@@ -1,9 +1,7 @@
 let moment = require('moment');
+let crypto = require('crypto');
 
 const encrypt = function (payload, session = 7) {
-    if(Object.keys(payload).length <= 0){
-        throw new Error('Payload required');
-    }
     const algorithm = 'HS256';
     const header = {
         type: 'JWT',
