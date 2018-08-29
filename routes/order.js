@@ -1,7 +1,7 @@
 let multer = require('multer');
 let express = require('express');
 let orderRouter = express.Router();
-let {createOrder, updateOrder, getOrder, getOrders} = require('../controller/order.controller');
+let {createOrder, updateOrder, getOrder, getOrders, getOrdersInExcel, getOrdersStat} = require('../controller/order.controller');
 let {uploadFile} = require('../controller/file.controller');
 let {isAuthenticated} = require('../middleware/authenticate');
 
@@ -34,6 +34,8 @@ orderRouter.post('/', isAuthenticated, createOrder);
 orderRouter.put('/:orderId', isAuthenticated, updateOrder);
 orderRouter.get('/:orderId', isAuthenticated, getOrder);
 orderRouter.get('/', isAuthenticated, getOrders);
+orderRouter.get('/excel', isAuthenticated, getOrdersInExcel);
+orderRouter.get('/stats', isAuthenticated, getOrdersStat);
 
 
 module.exports = orderRouter;
