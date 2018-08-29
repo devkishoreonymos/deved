@@ -182,13 +182,13 @@
   <li class="header">Main Navigation</li>
 
   <li class="active">
-    <a href="https://retale.co.in/crm/operator/dashboard">
+    <a href="#">
       <i class="fa fa-dashboard"></i> <span>Dashboard</span>
     </a>
   </li>
 
   <li>
-    <a href="https://retale.co.in/crm/operator/surveys">
+    <a href="./FormEntries.html">
       <i class="fa fa-list-ul"></i> <span>Form Entries</span>
     </a>
   </li>
@@ -486,7 +486,7 @@
 <script>
 	function getCities(zone) {
 		$.ajax({
-			url: 'http://192.168.0.136:3000/api/utils/zones/'+zone,
+			url: localStorage.getItem('BaseUrl')+'api/utils/zones/'+zone,
 			
       
 			success: function(response) {
@@ -530,7 +530,7 @@
 	};
 	function getplatforms(){
 		$.ajax({
-			url: 'http://192.168.0.136:3000/api/utils/platforms',
+			url: localStorage.getItem('BaseUrl')+'api/utils/platforms',
 			success: function(response) {
 				createOptions(response);
 				platformobject=response;

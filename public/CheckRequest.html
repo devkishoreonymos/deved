@@ -1,5 +1,4 @@
-﻿<!DOCTYPE html>
-<!-- saved from url=(0043)https://retale.co.in/crm/operator/dashboard -->
+<!DOCTYPE html>
 <html style="height: auto; min-height: 100%;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,7 +19,7 @@
   <link rel="stylesheet" href="./Dashboard _ Questionaire App_files/font-awesome.min.css">
 
   <!-- Ionicons -->
-  <link rel="stylesheet" href="./Dashboard _ Questionaire App_files/ionicons.min.css">
+  <link rel="stylesheet" href="./Dashboard _ Questionairegg App_files/ionicons.min.css">
   
   <!-- DataTables -->
   <link rel="stylesheet" href="./Dashboard _ Questionaire App_files/dataTables.bootstrap.min.css">
@@ -80,15 +79,20 @@
   </script>
 
   <!-- Bootstrap 3.3.7 -->
-  <script src="./Dashboard _ Questionaire App_files/bootstrap.min.js.download"></script>
+  <script src="../Dashboard _ Questionaire App_files/bootstrap.min.js.download"></script>
   
   <!-- SlimScroll -->
-  <script src="./Dashboard _ Questionaire App_files/jquery.slimscroll.min.js.download"></script>
+  <script src="../Dashboard _ Questionaire App_files/jquery.slimscroll.min.js.download"></script>
 
   <!-- FastClick -->
-  <script src="./Dashboard _ Questionaire App_files/fastclick.js.download"></script>
+	<script src="./Dashboard _ Questionaire App_files/fastclick.js.download"></script>
+	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="./appScripts/Dashboard.js"></script>
+  <link rel="stylesheet" href="cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+  <link rel="stylesheet" href="cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js">
 
-
+  
   <style>
     .img-avtar{
       border-radius: 50%;
@@ -106,7 +110,7 @@
 
   <header class="main-header">
     <!-- Logo -->
-    <a href="https://retale.co.in/crm/" class="logo">
+    <a href="#" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><img src="./Dashboard _ Questionaire App_files/denave_logo.jpg" width="50"></span>
       <!-- logo for regular state and mobile devices -->
@@ -129,7 +133,7 @@
           <!-- Messages: style can be found in dropdown.less-->
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
-            <a href="https://retale.co.in/crm/operator/dashboard#" class="dropdown-toggle" data-toggle="dropdown">
+            <a href="# class="dropdown-toggle" data-toggle="dropdown">
               <img src="./Dashboard _ Questionaire App_files/3.png" class="user-image" alt="User Image">
               <span class="hidden-xs">deo</span>
             </a>
@@ -158,7 +162,7 @@
       </div>
     </nav>
   </header>
-
+ 
   <!-- =============================================== -->
 
   <!-- Left side column. contains the sidebar -->
@@ -268,232 +272,29 @@
 		<!-- /.col -->
 	</div>
 	<!-- /.col -->
-
+  
 	<div class="box">
 		<div class="box-header theme-bg text-center">
 			<h3 class="box-title">Mystery Audit Program</h3>
 		</div>
-		<div class="box-body">
-
-			<form action="https://retale.co.in/crm/operator/forms/start" method="post">
-
-	<div class="row">
-
-
-		<div class="col-sm-4">
-			<div class="form-group">
-				<label for="formInput-1" class="control-label">Platform </label>
-				<br>
-				<select name="platform" id="platform" class="form-control select2 select2-hidden-accessible" style="width: 100%;" required="" onchange="getSuppliers(this.value)" tabindex="-1" aria-hidden="true">
-					<option value="">Select Platform</option>
-											<option value="1">Amazon</option>
-											<option value="2">Paytm</option>
-											<option value="3">Cadbury Gifting</option>
-									</select><span class="select2 select2-container select2-container--default" dir="ltr" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-platform-container"><span class="select2-selection__rendered" id="select2-platform-container" title="Select Platform">Select Platform</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
-		    </div>
-		</div>
-		
-		<div class="col-sm-4">
-			<div class="form-group">
-				<label for="formInput-1" class="control-label">Supplier/Distributor Name</label>
-				<div id="supplierSelectWrapper">
-					<select name="supplier" id="supplier" class="form-control select2 select2-hidden-accessible" required="" tabindex="-1" aria-hidden="true">
-						<option value="">Select Supplier/Distributor</option>
-											</select><span class="select2 select2-container select2-container--default" dir="ltr" style="width: 376.4px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-supplier-container"><span class="select2-selection__rendered" id="select2-supplier-container" title="Select Supplier/Distributor">Select Supplier/Distributor</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
-				</div>
-		    </div>
-		</div>
-
-		<div class="col-sm-4">
-			<div class="form-group">
-				<label for="formInput-1" class="control-label">Date</label>
-				<div class="input-group date">
-				  <div class="input-group-addon">
-				    <i class="fa fa-calendar"></i>
-				  </div>
-					<input type="text" name="date" readonly="" value="28 August, 2018" class="form-control datepicker" required="">
-				</div>
-		    </div>
-		</div>
-
-	</div>
-	<div class="row">
-
-		<div class="col-sm-4">
-			<div class="form-group">
-				<label for="formInput-1" class="control-label">Order ID</label>
-				<input type="text" name="order_id" class="form-control" required="" placeholder="" value="">
-		    </div>
-		</div>
-
-		<div class="col-sm-4">
-			<div class="form-group">
-				<label for="formInput-1" class="control-label">Mystery Shopper Name</label>
-				<input type="text" name="shopper" class="form-control" required="" placeholder="" value="">
-		    </div>
-		</div>
-
-		<div class="col-sm-4">
-			<div class="form-group">
-				<label for="formInput-1" class="control-label">Product Category </label>
-				<br>
-				<select name="product_category" id="product_category" class="form-control select2 select2-hidden-accessible" style="width: 100%;" required="" tabindex="-1" aria-hidden="true">
-					<option value="">Select Product Category</option>
-											<option value="1">Premium Category</option>
-											<option value="2">Gifting</option>
-											<option value="3">Bal Choc</option>
-											<option value="4">CJD</option>
-											<option value="5">D2C Customised</option>
-											<option value="6">D2C Personalised</option>
-									</select><span class="select2 select2-container select2-container--default" dir="ltr" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-product_category-container"><span class="select2-selection__rendered" id="select2-product_category-container" title="Select Product Category">Select Product Category</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
-		    </div>
-		</div>
-
-	</div>
-	<div class="row">
-
-		<div class="col-sm-4">
-			<div class="form-group">
-				<label for="formInput-1" class="control-label">Zone</label>
-				<br>
-				<select name="zone" id="zone" class="form-control select2 select2-hidden-accessible" style="width: 100%;" required="" onchange="getCities(this.value)" tabindex="-1" aria-hidden="true">
-					<option value="">Select your Zone</option>
-											<option value="1">East</option>
-											<option value="2">West</option>
-											<option value="3">North</option>
-											<option value="4">South</option>
-									</select><span class="select2 select2-container select2-container--default" dir="ltr" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-zone-container"><span class="select2-selection__rendered" id="select2-zone-container" title="Select your Zone">Select your Zone</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
-		    </div>
-		</div>
-
-		<div class="col-sm-4">
-			<div class="form-group">
-				<label for="formInput-1" class="control-label">City</label>
-				<br>
-				<div id="cityList">
-					<select name="city" id="city" class="form-control select2 select2-hidden-accessible" required="" style="width: 100%;" tabindex="-1" aria-hidden="true">
-						<option value="">Select your  City</option>
-											</select><span class="select2 select2-container select2-container--default" dir="ltr" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-city-container"><span class="select2-selection__rendered" id="select2-city-container" title="Select your  City">Select your  City</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
-				</div>
-		    </div>
-		</div>
-
-		<div class="col-sm-4">
-			<div class="form-group">
-				<label for="formInput-1" class="control-label">MFD/BBD </label>
-				<div class="input-group date">
-				  <div class="input-group-addon">
-				    <i class="fa fa-calendar"></i>
-				  </div>
-					<input type="text" name="mfd" readonly="" value="28 August, 2018" class="form-control datepicker" required="">
-			    </div>
-		    </div>
-		</div>
-
-	</div>
-	<div class="row">
-
-		<div class="col-sm-4">
-			<div class="form-group">
-				<label for="formInput-1" class="control-label">Order Date</label>
-				<div class="input-group date">
-				  <div class="input-group-addon">
-				    <i class="fa fa-calendar"></i>
-				  </div>
-					<input type="text" name="order_date" readonly="" value="28 August, 2018" class="form-control datepicker" min-date="29 July, 2018" required="">
-				</div>
-		    </div>
-		</div>
-
-		<div class="col-sm-4">
-			<div class="form-group">
-				<label for="formInput-1" class="control-label">Dispatch Date</label>
-				<div class="input-group date">
-				  <div class="input-group-addon">
-				    <i class="fa fa-calendar"></i>
-				  </div>
-					<input type="text" name="dispatch_date" readonly="" value="28 August, 2018" class="form-control datepicker" required="">
-				</div>
-		    </div>
-		</div>
-
-		<div class="col-sm-4">
-			<div class="form-group">
-				<label for="formInput-1" class="control-label">Delivery Date</label>
-				<div class="input-group date">
-				  <div class="input-group-addon">
-				    <i class="fa fa-calendar"></i>
-				  </div>
-					<input type="text" name="delivery_date" readonly="" value="28 August, 2018" class="form-control datepicker" required="">
-				</div>
-		    </div>
-		</div>
-
-
-	</div>
-	<div class="row">
-
-		<div class="col-sm-4">
-			<div class="form-group">
-				<label for="formInput-1" class="control-label">Type of Product</label>
-				<br>
-				<select name="product_type" id="product_type" class="form-control select2 select2-hidden-accessible" style="width: 100%;" required="" tabindex="-1" aria-hidden="true">
-					<option value="">Select Type of Product</option>
-											<option value="1">Premium Chocolate</option>
-											<option value="2">Gifting Chocolate</option>
-											<option value="3">Regular Chocolate</option>
-											<option value="4">Cadbury Joy Delivery</option>
-											<option value="5">D2C Customised</option>
-											<option value="6">D2C Personalised</option>
-									</select><span class="select2 select2-container select2-container--default" dir="ltr" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-product_type-container"><span class="select2-selection__rendered" id="select2-product_type-container" title="Select Type of Product">Select Type of Product</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
-		    </div>
-		</div>
-
-		<div class="col-sm-4">
-			<div class="form-group">
-				<label for="formInput-1" class="control-label">Product Name </label>
-				<br>
-				<select name="product_name" id="product_name" class="form-control select2 select2-hidden-accessible" style="width: 100%;" required="" tabindex="-1" aria-hidden="true">
-					<option value="">Select Product</option>
-											<option value="1">Silk</option>
-											<option value="2">Bournville</option>
-											<option value="3">Celebration</option>
-											<option value="4">Glow</option>
-											<option value="5">Silk Mini's</option>
-									</select><span class="select2 select2-container select2-container--default" dir="ltr" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-product_name-container"><span class="select2-selection__rendered" id="select2-product_name-container" title="Select Product">Select Product</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
-		    </div>
-		</div>
-
-		<div class="col-sm-4">
-			<div class="form-group">
-				<label for="formInput-1" class="control-label">Batch Code </label>
-				<input type="text" name="batch_code" class="form-control" required="" placeholder="" value="">
-		    </div>
-		</div>
-
-	</div>
-
-    <input type="hidden" name="redirect" value="operator/dashboard/index">
-
-    
-
-    <div class="form-group">
-
-    	<div class="pull-right">
-    		<button type="submit" class="btn btn-info btn-flat">Save &amp; Continue</button>
-    	</div>
-    	
-    </div>
-
-</form>
+	
 <script>
 	function getCities(zone) {
 		$.ajax({
-			url: 'https://retale.co.in/crm/operator/forms/list_cities?sel=&zone='+zone,
-			success: function (response) {
-				$('#cityList').html(response).find('select').select2();
+			url: 'http://192.168.0.136:3000/api/utils/zones/'+zone,
+			
+      
+			success: function(response) {
+				createOptionscity(response);
+			
+			//	$('#supplierSelectWrapper').html(response).find('select').select2();
+			},
+			error: function(error) {
+				console.log(" Error Occured: \n");
+				console.log(error);
 			}
 		})
+		
 	}
 
 
@@ -513,52 +314,36 @@
 
 	})
 
-	function getSuppliers(val) {
-		$.ajax({
-			url: 'https://retale.co.in/crm/operator/forms/list_supplier?sel=&platform='+val,
-			success: function(response) {
-				$('#supplierSelectWrapper').html(response).find('select').select2();
-			},
-			error: function(error) {
-				console.log(" Error Occured: \n");
-				console.log(error);
-			}
-		})
-	}
-
-	function alphaOnly(event) {
-	  var key = event.keyCode;
-	  return ((key >= 65 && key <= 90) || key == 8);
-	};
+	
+	
 
 </script>
 
 
 	<script>
 
-		$(document).ready(function() {
-			
-			$('.datepicker').datepicker({
-				format: 'dd MM, yyyy',
-			});
-
-			//Flat red color scheme for iCheck
-		    $('.icheck-checkbox, .icheck-radio').iCheck({
-		      checkboxClass: 'icheckbox_flat-green',
-		      radioClass   : 'iradio_flat-green'
-		    })
-
-		    $('.select2').select2()
-
-		})
 		
 	</script>
 
 	
-		</div>
+    </div>
+    <div id="divgrid"><table id="example" class="table table-condensed table-hover table-striped">
+        <thead>
+            <tr id="datathead">
+              
+              
+              
+            </tr>
+        </thead>
+        <tbody id="tbody">
+            
+            
+        </tbody>
+    </table></div>
 	</div>
-
+  
 </section>
+
 <!-- /.content -->
 
 
@@ -633,6 +418,45 @@
 <script src="./Dashboard _ Questionaire App_files/icheck.min.js.download"></script>
 
 <script>
+
+ 
+    function createHeader(){
+//     var arheaderarr=["supplier",
+// "date",
+// "orderId",
+// "oshopperName",
+// "city",
+// "ozone",
+// "orderDate",
+// "dispatchDate",
+// "deliveryDate",
+// "productType",
+// "roductName",
+// "productCategory",
+// "platform",
+// "batchCode",
+// "mafDate",
+// "townclass"]
+var arheaderarr=[
+"orderId",
+"orderDate",
+"dispatchDate",
+"deliveryDate",
+"productType",
+"ProductName",
+"productCategory",
+"Action",
+
+]
+for(var i=0;i<arheaderarr.length;i++){
+  var th='<th>'+arheaderarr[i]+'</th>';
+  $('#datathead').append(th);
+    }
+  }
+  createHeader();
+  $(document).ready(function() {
+   
+} );
   $(document).ready(function () {
     $('.sidebar-menu').tree()
   })
@@ -724,7 +548,124 @@ $('[data-ajax-modal]').on('click', function() {
 
         return false;
     })
+   griddata={};
+   function getgriddata(){
+    
+    $.ajax({
+      url: localStorage.getItem('BaseUrl')+'api/orders',
+      type: "Get",
+      headers: {"Authorization": localStorage.getItem('token')},
+       crossDoman:true,
+			success: function(response) {
+        $('#example').DataTable( {
+       
+        'data':response,
+        "columns": [
+        { "data": "orderId" },
+            { "data": "orderDate" },
+            { "data": "dispatchDate" },
+            { "data": "deliveryDate" },
+            { "data": "productType" },
+            { "data": "productName" },
+            { "data": "productCategory" },
+            { "data": "orderId" }
+          
+            
+        ],
+       
+      'columnDefs': [{
+                    'targets': [7],
+                    'searchable': false,
+                    'orderable': false,
+                    'className': 'dt-body-center',
+                    'render': function (data, type, full, meta) {
+                        return '<span  class="fa fa-check" onClick="ApproveRequest(this);" style="color:green; margin-right:5px;" aria-hidden="true"></span><span class="fa fa-times" onClick="RejectRequest(this);" style="color:red" aria-hidden="true"></span>';
+                            
+                    },
+                }],
+               
+       
+    } );
+        
+			//	$('#supplierSelectWrapper').html(response).find('select').select2();
+			},
+			error: function(error) {
+				console.log(" Error Occured: \n");
+				console.log(error);
+			}
+		})
+   }
+   getgriddata();
 
+  
+   function ApproveRequest(curr){
+    var parentTag = $(curr).parent().parent();
+    var table = $('#example').DataTable();
+    var selectedorderid= table.row( parentTag).data();
+  
+    $.ajax({
+        url:  localStorage.getItem('BaseUrl')+'api/orders/'+selectedorderid._id+'?action=accepted',
+        type: "Put",
+        crossDoman:true,
+        headers: {"Authorization": localStorage.getItem('token')},
+       crossDoman:true,
+        success: function (response) {
+            localStorage.setItem('token',response.token)
+           // window.location="../Dashboard _ Questionaire App.html";
+            $('#cityList').html(response).find('select').select2();
+            alert("approve request");
+        },
+        error:function(xhr,status,error){
+            console.log(error);
+        }
+    })
+       
+
+   }
+   function RejectRequest(curr){
+     var cf=  window.confirm('Are you Sure Reject request?');
+       if(!cf){
+
+        return;
+       }
+       var parentTag = $(curr).parent().parent();
+    var table = $('#example').DataTable();
+    var selectedorderid= table.row( parentTag).data();
+       $.ajax({
+        url:  localStorage.getItem('BaseUrl')+'api/orders/'+selectedorderid._id+'?action=rejected',
+        type: "Put",
+        crossDoman:true,
+        headers: {"Authorization": localStorage.getItem('token')},
+      
+        success: function (response) {
+            localStorage.setItem('token',response.token)
+           // window.location="../Dashboard _ Questionaire App.html";
+            $('#cityList').html(response).find('select').select2();
+        },
+        error:function(xhr,status,error){
+            console.log(error);
+        }
+    })
+    }
+   function createDataGrid(griddata){
+    var arheaderarr=[
+"orderId",
+"orderDate",
+"dispatchDate",
+"deliveryDate",
+"productType",
+"ProductName",
+"productCategory"
+]
+    var tdb=$('#tbody')[0];
+    var ht="";
+for(var i=0;i<griddata.length;i++){
+  var row="<td>";
+  for(var j=0;j<arheaderarr.length;j++){
+var col='<td>'+griddata[i].arheaderarr[j]+'</td>';
+}
+}
+   }
 </script>
 
 

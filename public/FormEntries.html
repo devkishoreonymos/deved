@@ -88,7 +88,11 @@
 	<script src="./Dashboard _ Questionaire App_files/fastclick.js.download"></script>
 	
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<script src="./appScripts/Dashboard.js"></script>
+  <script src="./appScripts/Dashboard.js"></script>
+  <link rel="stylesheet" href="cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+  <link rel="stylesheet" href="cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js">
+
+  
   <style>
     .img-avtar{
       border-radius: 50%;
@@ -158,7 +162,7 @@
       </div>
     </nav>
   </header>
-
+ 
   <!-- =============================================== -->
 
   <!-- Left side column. contains the sidebar -->
@@ -268,7 +272,7 @@
 		<!-- /.col -->
 	</div>
 	<!-- /.col -->
-
+  
 	<div class="box">
 		<div class="box-header theme-bg text-center">
 			<h3 class="box-title">Mystery Audit Program</h3>
@@ -322,10 +326,24 @@
 	</script>
 
 	
-		</div>
+    </div>
+    <div id="divgrid"><table id="example" class="table table-condensed table-hover table-striped">
+        <thead>
+            <tr id="datathead">
+              
+              
+              
+            </tr>
+        </thead>
+        <tbody id="tbody">
+            
+            
+        </tbody>
+    </table></div>
 	</div>
-
+  
 </section>
+
 <!-- /.content -->
 
 
@@ -400,6 +418,43 @@
 <script src="./Dashboard _ Questionaire App_files/icheck.min.js.download"></script>
 
 <script>
+
+ 
+    function createHeader(){
+//     var arheaderarr=["supplier",
+// "date",
+// "orderId",
+// "oshopperName",
+// "city",
+// "ozone",
+// "orderDate",
+// "dispatchDate",
+// "deliveryDate",
+// "productType",
+// "roductName",
+// "productCategory",
+// "platform",
+// "batchCode",
+// "mafDate",
+// "townclass"]
+var arheaderarr=[
+"orderId",
+"orderDate",
+"dispatchDate",
+"deliveryDate",
+"productType",
+"ProductName",
+"productCategory"
+]
+for(var i=0;i<arheaderarr.length;i++){
+  var th='<th>'+arheaderarr[i]+'</th>';
+  $('#datathead').append(th);
+    }
+  }
+  createHeader();
+  $(document).ready(function() {
+   
+} );
   $(document).ready(function () {
     $('.sidebar-menu').tree()
   })
@@ -491,7 +546,58 @@ $('[data-ajax-modal]').on('click', function() {
 
         return false;
     })
-
+   griddata={};
+   function getgriddata(){
+    
+    $.ajax({
+      url: localStorage.getItem('BaseUrl')+'api/orders',
+      type: "Get",
+      headers: {"Authorization": localStorage.getItem('token')},
+       crossDoman:true,
+			success: function(response) {
+        $('#example').DataTable( {
+       
+        'data':response,
+        "columns": [
+        { "data": "orderId" },
+            { "data": "orderDate" },
+            { "data": "dispatchDate" },
+            { "data": "deliveryDate" },
+            { "data": "productType" },
+            { "data": "productName" },
+            { "data": "productCategory" }
+        ]
+       
+    } );
+        
+			//	$('#supplierSelectWrapper').html(response).find('select').select2();
+			},
+			error: function(error) {
+				console.log(" Error Occured: \n");
+				console.log(error);
+			}
+		})
+   }
+   getgriddata();
+   function createDataGrid(griddata){
+    var arheaderarr=[
+"orderId",
+"orderDate",
+"dispatchDate",
+"deliveryDate",
+"productType",
+"ProductName",
+"productCategory"
+]
+    var tdb=$('#tbody')[0];
+    var ht="";
+for(var i=0;i<griddata.length;i++){
+  var row="<td>";
+  for(var j=0;j<arheaderarr.length;j++){
+var col='<td>'+griddata[i].arheaderarr[j]+'</td>';
+}
+}
+   }
 </script>
 
 

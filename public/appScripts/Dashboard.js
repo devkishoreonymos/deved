@@ -42,13 +42,13 @@ var DashBoard = {
             formvalue.townclass=$("#selectcity[value='"+formvalue.city+"']").attr('townclass');
             console.log(formvalue);
             $.ajax({
-                url: 'http://192.168.0.136:3000/api/orders',
+                url: localStorage.getItem('BaseUrl')+'api/orders',
                 type: "POST",
                 headers: {"Authorization": localStorage.getItem('token')},
                 crossDoman:true,
                data: formvalue,
                 success: function (response) {
-                    window.location="./FormEntries.html";
+                    window.location="./CheckRequest.html";
                     $('#cityList').html(response).find('select').select2();
                 }
             })
