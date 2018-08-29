@@ -32,10 +32,11 @@ orderRouter.post('/upload', isAuthenticated, upload.single('file'), uploadFile);
 
 orderRouter.post('/', isAuthenticated, createOrder);
 orderRouter.put('/:orderId', isAuthenticated, updateOrder);
-orderRouter.get('/:orderId', isAuthenticated, getOrder);
 orderRouter.get('/', isAuthenticated, getOrders);
 orderRouter.get('/excel', isAuthenticated, getOrdersInExcel);
 orderRouter.get('/stats', isAuthenticated, getOrdersStat);
+orderRouter.get('/:orderId', isAuthenticated, getOrder);
+
 
 
 module.exports = orderRouter;
