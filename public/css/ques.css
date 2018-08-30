@@ -1,0 +1,64 @@
+.form-group {
+    background: #f6f6f642;
+    padding: 10px;
+    border-left: 2px solid red;
+    position: relative;
+    padding-left: 55px;
+}
+
+.denave {
+    counter-reset: Q;
+}
+
+.denave .form-group:before {
+    content: "Q" counter(Q) ": ";
+    counter-increment: Q;
+    position: absolute;
+    left: 14px;
+    font-weight: bold;
+    color: red;
+}
+
+.denave .form-group .question-label {
+    font-weight: bold;
+    padding-left: 0;
+}
+
+.dlivery-section,
+.Package-condition,
+.product-condition,
+.Qcheck {
+    box-shadow: 0px 1px 7px #ccc;
+    position: relative;
+    padding-top: 42px;
+}
+
+.dlivery-section:before,
+.Package-condition:before,
+.product-condition:before,
+.Qcheck:before {
+    position: absolute;
+    top: 0;
+    background: #cc0019;
+    width: 100%;
+    padding: 6px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.dlivery-section:before {
+    content: 'Delivery Details';
+}
+
+.Package-condition:before {
+    content: 'Packaging Condition';
+}
+
+.product-condition:before {
+    content: 'Product condition and BBD';
+}
+
+.Qcheck:before {
+    content: 'Quality Check Parameter(CJD/D2C Cust/D2C Pers)';
+}
