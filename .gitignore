@@ -16,5 +16,5 @@ node_modules/
 npm-debug.log*
 
 # File directory
-public/uploads/
+
 public/reports/
