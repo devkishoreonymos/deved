@@ -5,6 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 let bluebird = require('bluebird');
 let mongoose = require('mongoose');
+let fs = require('fs');
 
 let {seedDb} = require('./helper/seedDb');
 
@@ -17,6 +18,9 @@ var app = express();
 
 setUpMongo();
 
+if (!fs.existsSync('public/uploads')) {
+    fs.mkdirSync('public/uploads');
+}
 
 
 // view engine setup
