@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html style="height: auto; min-height: 100%;">
 
 <head>
@@ -181,7 +181,7 @@
                         <img src="./Dashboard _ Questionaire App_files/3.png" class="img-circle" alt="User Image" style="height:  45px !important;">
                     </div>
                     <div class="pull-left info">
-                        <p>deo</p>
+                        <span class="hidden-xs user_role">deo</span>
                         <a href="https://retale.co.in/crm/operator/dashboard#">
                             <i class="fa fa-circle text-success"></i> Online</a>
                     </div>
@@ -192,14 +192,14 @@
 
                     <li class="header">Main Navigation</li>
 
-                    <li class="active">
+                    <li>
                         <a href="#">
                             <i class="fa fa-dashboard"></i>
                             <span>Dashboard</span>
                         </a>
                     </li>
 
-                    <li>
+                    <li class="active">
                         <a href="./CheckRequest.html">
                             <i class="fa fa-list-ul"></i>
                             <span>Form Entries</span>
@@ -297,7 +297,7 @@
                     </div>
                     <div class="box-body">
 
-                        <form>
+                        <form name="entriesForm" id="entriesForm">
 
                             <div class="row">
 
@@ -310,18 +310,6 @@
                                             onchange="getSuppliers(this.value)" tabindex="-1" aria-hidden="true">
 
                                         </select>
-                                        <span class="select2 select2-container select2-container--default" dir="ltr" style="width: 100%;">
-                                            <span class="selection">
-                                                <span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0"
-                                                    aria-labelledby="select2-platform-container">
-                                                    <span class="select2-selection__rendered" id="select2-platform-container" title="Select Platform">Select Platform</span>
-                                                    <span class="select2-selection__arrow" role="presentation">
-                                                        <b role="presentation"></b>
-                                                    </span>
-                                                </span>
-                                            </span>
-                                            <span class="dropdown-wrapper" aria-hidden="true"></span>
-                                        </span>
                                     </div>
                                 </div>
 
@@ -379,18 +367,6 @@
                                             <option value="5">D2C Customised</option>
                                             <option value="6">D2C Personalised</option>
                                         </select>
-                                        <span class="select2 select2-container select2-container--default" dir="ltr" style="width: 100%;">
-                                            <span class="selection">
-                                                <span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0"
-                                                    aria-labelledby="select2-product_category-container">
-                                                    <span class="select2-selection__rendered" id="select2-product_category-container" title="Select Product Category">Select Product Category</span>
-                                                    <span class="select2-selection__arrow" role="presentation">
-                                                        <b role="presentation"></b>
-                                                    </span>
-                                                </span>
-                                            </span>
-                                            <span class="dropdown-wrapper" aria-hidden="true"></span>
-                                        </span>
                                     </div>
                                 </div>
 
@@ -409,18 +385,6 @@
                                             <option value="North">North</option>
                                             <option value="South">South</option>
                                         </select>
-                                        <span class="select2 select2-container select2-container--default" dir="ltr" style="width: 100%;">
-                                            <span class="selection">
-                                                <span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0"
-                                                    aria-labelledby="select2-zone-container">
-                                                    <span class="select2-selection__rendered" id="select2-zone-container" title="Select your Zone">Select your Zone</span>
-                                                    <span class="select2-selection__arrow" role="presentation">
-                                                        <b role="presentation"></b>
-                                                    </span>
-                                                </span>
-                                            </span>
-                                            <span class="dropdown-wrapper" aria-hidden="true"></span>
-                                        </span>
                                     </div>
                                 </div>
 
@@ -433,18 +397,6 @@
                                                 tabindex="-1" aria-hidden="true">
                                                 <option value="">Select your City</option>
                                             </select>
-                                            <span class="select2 select2-container select2-container--default" dir="ltr" style="width: 100%;">
-                                                <span class="selection">
-                                                    <span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0"
-                                                        aria-labelledby="select2-city-container">
-                                                        <span class="select2-selection__rendered" id="select2-city-container" title="Select your  City">Select your City</span>
-                                                        <span class="select2-selection__arrow" role="presentation">
-                                                            <b role="presentation"></b>
-                                                        </span>
-                                                    </span>
-                                                </span>
-                                                <span class="dropdown-wrapper" aria-hidden="true"></span>
-                                            </span>
                                         </div>
                                     </div>
                                 </div>
@@ -521,18 +473,6 @@
                                             <option value="2C Customised">D2C Customised</option>
                                             <option value="D2C Personalised">D2C Personalised</option>
                                         </select>
-                                        <span class="select2 select2-container select2-container--default" dir="ltr" style="width: 100%;">
-                                            <span class="selection">
-                                                <span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0"
-                                                    aria-labelledby="select2-product_type-container">
-                                                    <span class="select2-selection__rendered" id="select2-product_type-container" title="Select Type of Product">Select Type of Product</span>
-                                                    <span class="select2-selection__arrow" role="presentation">
-                                                        <b role="presentation"></b>
-                                                    </span>
-                                                </span>
-                                            </span>
-                                            <span class="dropdown-wrapper" aria-hidden="true"></span>
-                                        </span>
                                     </div>
                                 </div>
 
@@ -549,18 +489,6 @@
                                             <option value="Glow">Glow</option>
                                             <option value="Silk Mini's">Silk Mini's</option>
                                         </select>
-                                        <span class="select2 select2-container select2-container--default" dir="ltr" style="width: 100%;">
-                                            <span class="selection">
-                                                <span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0"
-                                                    aria-labelledby="select2-product_name-container">
-                                                    <span class="select2-selection__rendered" id="select2-product_name-container" title="Select Product">Select Product</span>
-                                                    <span class="select2-selection__arrow" role="presentation">
-                                                        <b role="presentation"></b>
-                                                    </span>
-                                                </span>
-                                            </span>
-                                            <span class="dropdown-wrapper" aria-hidden="true"></span>
-                                        </span>
                                     </div>
                                 </div>
 
@@ -573,36 +501,105 @@
 
                             </div>
 
-                            <input type="hidden" name="redirect" value="operator/dashboard/index">
+                            <!-- <input type="hidden" name="redirect" value="operator/dashboard/index"> -->
 
 
 
                             <div class="form-group">
 
                                 <div class="pull-right">
-                                    <button type="button" class="btn btn-info btn-flat" onclick="DashBoard.getformvalue()">Save &amp; Continue</button>
+                                    <button type="submit" class="btn btn-info btn-flat edit_btn">Save &amp; Continue</button>
                                 </div>
 
                             </div>
 
                         </form>
                         <script>
-                            function getCities(zone) {
+                            function getStats() {
+                                var url = localStorage.getItem('BaseUrl') + 'api/orders/stats';
+                                console.log(url);
                                 $.ajax({
-                                    url: localStorage.getItem('BaseUrl') + 'api/utils/zones/' + zone,
-
-
+                                    url: url,
+                                    type: "GET",
+                                    crossDoman: true,
+                                    headers: { "Authorization": localStorage.getItem('token') },
                                     success: function (response) {
-                                        createOptionscity(response);
-
-                                        //	$('#supplierSelectWrapper').html(response).find('select').select2();
+                                        $('.total_filled').text(response.total);
+                                        $('.total_validated').text(response.accepted);
+                                        $('.total_rejected').text(response.rejected);
+                                        $('.total_pending').text(response.pending);
                                     },
-                                    error: function (error) {
-                                        console.log(" Error Occured: \n");
+                                    error: function (xhr, status, error) {
                                         console.log(error);
                                     }
                                 })
+                            }
+                            getStats();
+                            var user = JSON.parse(localStorage.getItem('deved_user'));
+                            $('.user_role').text(user.role);
+                            var searchParams = new URLSearchParams(window.location.search);
+                            var id = searchParams.get('id');
+                            // if (searchParams.get('edit') && searchParams.get('edit') == 'false') {
+                            //     $('.edit_btn').toggle();
+                            // }
+                            if (id) {
+                                $.ajax({
+                                    url: localStorage.getItem('BaseUrl') + 'api/orders/' + id,
+                                    type: "GET",
+                                    crossDoman: true,
+                                    headers: {
+                                        "Authorization": localStorage.getItem('token')
+                                    },
+                                    success: function (response) {
+                                        console.log(response)
+                                        getCities(response.zone, response);
+                                    },
+                                    error: function (xhr, status, error) {
+                                        console.log(error);
+                                    }
+                                })
+                            }
+                            var citiesData = [];
+                            function getCities(zone, data) {
+                                if (citiesData.length) {
+                                    createOptionscity(citiesData, data);
+                                } else {
+                                    $.ajax({
+                                        url: localStorage.getItem('BaseUrl') + 'api/utils/zones/' + zone,
 
+
+                                        success: function (response) {
+                                            citiesData = response;
+                                            createOptionscity(response, data);
+                                            //	$('#supplierSelectWrapper').html(response).find('select').select2();
+                                        },
+                                        error: function (error) {
+                                            console.log(" Error Occured: \n");
+                                            console.log(error);
+                                        }
+                                    })
+                                }
+
+                            }
+
+                            function setValues(response) {
+                                for (var i in response) {
+                                    $(`#platform`).val(response.platform).change();
+                                    $(`#supplier`).val(response.supplier);
+                                    $(`#dashboarddate`).val(response.date);
+                                    $(`#order_id`).val(response.orderId);
+                                    $(`#txtshopper`).val(response.shopperName);
+                                    $(`#selectcity`).val(response.city).change();
+                                    $(`#zone`).val(response.zone).change();
+                                    $(`#order_date`).val(response.orderDate);
+                                    $(`#txtdispatch_date`).val(response.dispatchDate);
+                                    $(`#txtdelivery_date`).val(response.deliveryDate);
+                                    $(`#selectproduct_type`).val(response.productType).change();
+                                    $(`#product_name`).val(response.productName).change();
+                                    $(`#product_category`).val(response.productCategory).change();
+                                    $(`#txtbatchcode`).val(response.batchCode);
+                                    $(`#mfd`).val(response.mafDate);
+                                }
                             }
 
 
@@ -650,8 +647,8 @@
                             platformobject = {};
                             getplatforms();
 
-                            function createOptionscity(obj) {
-                                $('#selectcity').empty();
+                            function createOptionscity(obj, data) {
+                                // $('#selectcity').empty();
                                 var op = document.createElement('option');
                                 op.value = "Select your city";
                                 op.text = "Select your city";
@@ -664,11 +661,17 @@
                                     $('#selectcity')[0].appendChild(op);
                                 }
 
+                                if (data) {
+                                    setValues(data);
+                                    $('#selectcity').val(data.city).change();
+                                } else {
+                                    // $('#selectcity').empty();
+                                }
                             }
                             function createOptions(obj) {
                                 $('#platform').empty();
                                 var op = document.createElement('option');
-                                op.value = "Select PlatForms";
+                                op.value = "";
                                 op.text = "Select PlatForms";
                                 $('#platform')[0].appendChild(op);
                                 for (var i = 0; i < obj.length; i++) {
@@ -680,6 +683,50 @@
 
                             }
 
+                            var submit = false;
+
+                            document.getElementById('entriesForm').onsubmit = function () {
+                                submit = true;
+                                openQuestions();
+                                return false;
+                            }
+
+                            function openQuestions() {
+                                var data = {
+                                    platform: $(`#platform`).val() || 'NA',
+                                    supplier: $(`#supplier`).val() || 'NA',
+                                    date: $(`#dashboarddate`).val() ? new Date($(`#dashboarddate`).val()) : 'NA',
+                                    orderId: $(`#order_id`).val() || 'NA',
+                                    shopperName: $(`#txtshopper`).val() || 'NA',
+                                    city: $(`#selectcity`).val() || 'NA',
+                                    zone: $(`#zone`).val() || 'NA',
+                                    orderDate: $(`#order_date`).val() ? new Date($(`#order_date`).val()) : 'NA',
+                                    dispatchDate: $(`#txtdispatch_date`).val() ? new Date($(`#txtdispatch_date`).val()) : 'NA',
+                                    deliveryDate: $(`#txtdelivery_date`).val() ? new Date($(`#txtdelivery_date`).val()) : 'NA',
+                                    productType: $(`#selectproduct_type`).val() || 'NA',
+                                    productName: $(`#product_name`).val() || 'NA',
+                                    productCategory: $(`#product_category`).val() || 'NA',
+                                    batchCode: $(`#txtbatchcode`).val() || 'NA',
+                                    mafDate: $(`#mfd`).val() ? new Date($(`#mfd`).val()) : 'NA',
+                                }
+                                var str = "";
+                                for (var key in data) {
+                                    if (str != "") {
+                                        str += "&";
+                                    }
+                                    str += key + "=" + encodeURIComponent(data[key]);
+                                }
+                                localStorage.setItem('formData', JSON.stringify(data));
+                                if (!searchParams.get('edit')) {
+                                    window.location = "form_entries_create_update_question.html";
+                                } else {
+                                    window.location = `form_entries_create_update_question.html?edit=${searchParams.get('edit')}&id=` + id;
+                                }
+                                // $('#entriesForm').toggle();
+                                event.preventDefault();
+                            }
+
+                            localStorage.removeItem('formData');
                         </script>
 
 
@@ -689,6 +736,7 @@
 
                                 $('.datepicker').datepicker({
                                     format: 'dd MM, yyyy',
+                                    autoclose: true,
                                 });
 
                                 //Flat red color scheme for iCheck

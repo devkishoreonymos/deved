@@ -1,605 +1,634 @@
 <!DOCTYPE html>
-<html style="height: auto; min-height: 100%;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title> Dashboard | Questionaire App </title>
+<html style="height: auto; min-height: 100%;">
 
-  <!-- Tell the browser to be responsive to screen width -->
-  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-  <link rel="icon" href="https://retale.co.in/crm/assets//img/favicon.png">
-  
-  <!-- Google Font -->
-  <link rel="stylesheet" href="./Dashboard _ Questionaire App_files/css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title> Dashboard | Questionaire App </title>
 
-  <!-- Bootstrap 3.3.7 -->
-  <link rel="stylesheet" href="./Dashboard _ Questionaire App_files/bootstrap.min.css">
-  
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="./Dashboard _ Questionaire App_files/font-awesome.min.css">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
-  <!-- Ionicons -->
-  <link rel="stylesheet" href="./Dashboard _ Questionairegg App_files/ionicons.min.css">
-  
-  <!-- DataTables -->
-  <link rel="stylesheet" href="./Dashboard _ Questionaire App_files/dataTables.bootstrap.min.css">
-  
-  <!-- Select2 -->
-  <link rel="stylesheet" href="./Dashboard _ Questionaire App_files/select2.min.css">
+    <link rel="icon" href="https://retale.co.in/crm/assets//img/favicon.png">
 
-  <!-- daterange picker -->
-  <link rel="stylesheet" href="./Dashboard _ Questionaire App_files/daterangepicker.css">
-  
-  <!-- bootstrap datepicker -->
-  <link rel="stylesheet" href="./Dashboard _ Questionaire App_files/bootstrap-datepicker.min.css">
+    <!-- Google Font -->
+    <link rel="stylesheet" href="./Dashboard _ Questionaire App_files/css">
+
+    <!-- Bootstrap 3.3.7 -->
+    <link rel="stylesheet" href="./Dashboard _ Questionaire App_files/bootstrap.min.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="./Dashboard _ Questionaire App_files/font-awesome.min.css">
+
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="./Dashboard _ Questionairegg App_files/ionicons.min.css">
+
+    <!-- DataTables -->
+    <link rel="stylesheet" href="./Dashboard _ Questionaire App_files/dataTables.bootstrap.min.css">
+
+    <!-- Select2 -->
+    <link rel="stylesheet" href="./Dashboard _ Questionaire App_files/select2.min.css">
+
+    <!-- daterange picker -->
+    <link rel="stylesheet" href="./Dashboard _ Questionaire App_files/daterangepicker.css">
+
+    <!-- bootstrap datepicker -->
+    <link rel="stylesheet" href="./Dashboard _ Questionaire App_files/bootstrap-datepicker.min.css">
 
 
-  <!-- Morris chart -->
-  <link rel="stylesheet" href="./Dashboard _ Questionaire App_files/morris.css">
-  <!-- jvectormap -->
-  <link rel="stylesheet" href="./Dashboard _ Questionaire App_files/jquery-jvectormap.css">
-  <!-- Date Picker -->
-  <link rel="stylesheet" href="./Dashboard _ Questionaire App_files/bootstrap-datepicker.min.css">
-  <!-- Daterange picker -->
-  <link rel="stylesheet" href="./Dashboard _ Questionaire App_files/daterangepicker.css">
-  <!-- bootstrap wysihtml5 - text editor -->
-  <link rel="stylesheet" href="./Dashboard _ Questionaire App_files/bootstrap3-wysihtml5.min.css">
+    <!-- Morris chart -->
+    <link rel="stylesheet" href="./Dashboard _ Questionaire App_files/morris.css">
+    <!-- jvectormap -->
+    <link rel="stylesheet" href="./Dashboard _ Questionaire App_files/jquery-jvectormap.css">
+    <!-- Date Picker -->
+    <link rel="stylesheet" href="./Dashboard _ Questionaire App_files/bootstrap-datepicker.min.css">
+    <!-- Daterange picker -->
+    <link rel="stylesheet" href="./Dashboard _ Questionaire App_files/daterangepicker.css">
+    <!-- bootstrap wysihtml5 - text editor -->
+    <link rel="stylesheet" href="./Dashboard _ Questionaire App_files/bootstrap3-wysihtml5.min.css">
 
-  <!-- Uncomment the below code if you want to use official AdminLte Theme -->
-  <!-- Theme style -->
-  <!-- <link rel="stylesheet" href="https://retale.co.in/crm/assets//css/AdminLTE.min.css"> -->
+    <!-- Uncomment the below code if you want to use official AdminLte Theme -->
+    <!-- Theme style -->
+    <!-- <link rel="stylesheet" href="https://retale.co.in/crm/assets//css/AdminLTE.min.css"> -->
 
     <!-- iCheck for checkboxes and radio inputs -->
-  <link rel="stylesheet" href="../Dashboard _ Questionaire App_files/all.css">
+    <link rel="stylesheet" href="../Dashboard _ Questionaire App_files/all.css">
 
-  <!-- Theme style -->
-  <link rel="stylesheet" href="./Dashboard _ Questionaire App_files/app.css">
-  
-  <!-- AdminLTE Skins. Choose a skin from the css/skins
+    <!-- Theme style -->
+    <link rel="stylesheet" href="./Dashboard _ Questionaire App_files/app.css">
+
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
-  <link rel="stylesheet" href="./Dashboard _ Questionaire App_files/_all-skins.min.css">
+    <link rel="stylesheet" href="./Dashboard _ Questionaire App_files/_all-skins.min.css">
 
-  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
   <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
 
-  <!-- jQuery 3 -->
-  <script src="./Dashboard _ Questionaire App_files/jquery.min.js.download"></script>
+    <!-- jQuery 3 -->
+    <script src="./Dashboard _ Questionaire App_files/jquery.min.js.download"></script>
 
 
-  <!-- jQuery UI 1.11.4 -->
-  <script src="./Dashboard _ Questionaire App_files/jquery-ui.min.js.download"></script>
+    <!-- jQuery UI 1.11.4 -->
+    <script src="./Dashboard _ Questionaire App_files/jquery-ui.min.js.download"></script>
 
-  <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-  <script>
-  $.widget.bridge('uibutton', $.ui.button);
-  </script>
+    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <script>
+        $.widget.bridge('uibutton', $.ui.button);
+    </script>
 
-  <!-- Bootstrap 3.3.7 -->
-  <script src="../Dashboard _ Questionaire App_files/bootstrap.min.js.download"></script>
-  
-  <!-- SlimScroll -->
-  <script src="../Dashboard _ Questionaire App_files/jquery.slimscroll.min.js.download"></script>
+    <!-- Bootstrap 3.3.7 -->
+    <script src="../Dashboard _ Questionaire App_files/bootstrap.min.js.download"></script>
 
-  <!-- FastClick -->
-	<script src="./Dashboard _ Questionaire App_files/fastclick.js.download"></script>
-	
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script src="./appScripts/Dashboard.js"></script>
-  <link rel="stylesheet" href="cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
-  <link rel="stylesheet" href="cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js">
+    <!-- SlimScroll -->
+    <script src="../Dashboard _ Questionaire App_files/jquery.slimscroll.min.js.download"></script>
 
-  
-  <style>
-    .img-avtar{
-      border-radius: 50%;
-    }
-  </style>
+    <!-- FastClick -->
+    <script src="./Dashboard _ Questionaire App_files/fastclick.js.download"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="./appScripts/Dashboard.js"></script>
+    <link rel="stylesheet" href="cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js">
+
+
+    <style>
+        .img-avtar {
+            border-radius: 50%;
+        }
+    </style>
 
 
 </head>
-<body class="skin-custom sidebar-mini  pace-done" style="height: auto; min-height: 100%;"><div class="pace  pace-inactive"><div class="pace-progress" data-progress-text="100%" data-progress="99" style="transform: translate3d(100%, 0px, 0px);">
-  <div class="pace-progress-inner"></div>
-</div>
-<div class="pace-activity"></div></div>
-<!-- Site wrapper -->
-<div class="wrapper" style="height: auto; min-height: 100%;">
 
-  <header class="main-header">
-    <!-- Logo -->
-    <a href="#" class="logo">
-      <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><img src="./Dashboard _ Questionaire App_files/denave_logo.jpg" width="50"></span>
-      <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg">
-        <img src="./Dashboard _ Questionaire App_files/denave_logo.jpg" width="150">
-      </span>
-    </a>
-    <!-- Header Navbar: style can be found in header.less -->
-    <nav class="navbar navbar-static-top">
-      <!-- Sidebar toggle button-->
-      <a href="https://retale.co.in/crm/operator/dashboard#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </a>
-
-      <div class="navbar-custom-menu">
-        <ul class="nav navbar-nav">
-          <!-- Messages: style can be found in dropdown.less-->
-          <!-- User Account: style can be found in dropdown.less -->
-          <li class="dropdown user user-menu">
-            <a href="# class="dropdown-toggle" data-toggle="dropdown">
-              <img src="./Dashboard _ Questionaire App_files/3.png" class="user-image" alt="User Image">
-              <span class="hidden-xs">deo</span>
-            </a>
-            <ul class="dropdown-menu">
-              <!-- User image -->
-              <li class="user-header">
-                <img src="./Dashboard _ Questionaire App_files/3.png" class="img-circle" alt="User Image">
-
-                <p>
-                  deo                  <small>Member since July. 2018</small>
-                </p>
-              </li>
-              <!-- Menu Footer-->
-              <li class="user-footer">
-                <div class="pull-left">
-                  <a href="https://retale.co.in/crm/profile" class="btn btn-default btn-flat">Profile</a>
-                </div>
-                <div class="pull-right">
-                  <a href="https://retale.co.in/crm/logout" class="btn btn-default btn-flat">Sign out</a>
-                </div>
-              </li>
-            </ul>
-          </li>
-          <!-- Control Sidebar Toggle Button -->
-        </ul>
-      </div>
-    </nav>
-  </header>
- 
-  <!-- =============================================== -->
-
-  <!-- Left side column. contains the sidebar -->
-  <aside class="main-sidebar">
-    <!-- sidebar: style can be found in sidebar.less -->
-    <section class="sidebar" style="height: auto;">
-      <!-- Sidebar user panel -->
-      <div class="user-panel">
-        <div class="pull-left image">
-          <img src="./Dashboard _ Questionaire App_files/3.png" class="img-circle" alt="User Image" style="height:  45px !important;">
+<body class="skin-custom sidebar-mini  pace-done" style="height: auto; min-height: 100%;">
+    <div class="pace  pace-inactive">
+        <div class="pace-progress" data-progress-text="100%" data-progress="99" style="transform: translate3d(100%, 0px, 0px);">
+            <div class="pace-progress-inner"></div>
         </div>
-        <div class="pull-left info">
-          <p>deo</p>
-          <a href="https://retale.co.in/crm/operator/dashboard#"><i class="fa fa-circle text-success"></i> Online</a>
-        </div>
-      </div>
-
-      <!-- sidebar menu: : style can be found in sidebar.less -->
-      <ul class="sidebar-menu tree" data-widget="tree">
-  
-  <li class="header">Main Navigation</li>
-
-  <li class="active">
-    <a href="https://retale.co.in/crm/operator/dashboard">
-      <i class="fa fa-dashboard"></i> <span>Dashboard</span>
-    </a>
-  </li>
-
-  <li>
-    <a href="https://retale.co.in/crm/operator/surveys">
-      <i class="fa fa-list-ul"></i> <span>Form Entries</span>
-    </a>
-  </li>
-
-</ul>    </section>
-    <!-- /.sidebar -->
-  </aside>
-
-  <!-- =============================================== -->
-
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper" style="min-height: 629px;">
-
-    
-<!-- Content Header (Page header) -->
-<section class="content-header">
-  <h1>
-    Form Summary
-  </h1>
-</section>
-
-<!-- Main content -->
-<section class="content">
-
-	<div class="row">
-		<div class="col-md-3 col-sm-6 col-xs-12">
-			<div class="info-box">
-				<span class="info-box-icon bg-aqua"><i class="fa fa-file-text-o"></i></span>
-
-				<div class="info-box-content">
-				  <span class="info-box-text">Total Filled</span>
-				  <span class="info-box-number">35</span>
-				</div>
-				<!-- /.info-box-content -->
-			</div>
-			<!-- /.info-box -->
-		</div>
-		<!-- /.col -->
-		<div class="col-md-3 col-sm-6 col-xs-12">
-			<div class="info-box">
-				<span class="info-box-icon bg-green"><i class="fa fa-file-text-o"></i></span>
-
-				<div class="info-box-content">
-				  <span class="info-box-text">Validated</span>
-				  <span class="info-box-number">15</span>
-				</div>
-				<!-- /.info-box-content -->
-			</div>
-			<!-- /.info-box -->
-		</div>
-		<!-- /.col -->
-		<div class="col-md-3 col-sm-6 col-xs-12">
-			<div class="info-box">
-				<span class="info-box-icon bg-red"><i class="fa fa-file-text-o"></i></span>
-
-				<div class="info-box-content">
-				  <span class="info-box-text">Rejected</span>
-				  <span class="info-box-number">0</span>
-				</div>
-				<!-- /.info-box-content -->
-			</div>
-			<!-- /.info-box -->
-		</div>
-		<!-- /.col -->
-		<div class="col-md-3 col-sm-6 col-xs-12">
-			<div class="info-box">
-				<span class="info-box-icon bg-red"><i class="fa fa-file-text-o"></i></span>
-
-				<div class="info-box-content">
-				  <span class="info-box-text">Pending</span>
-				  <span class="info-box-number">13</span>
-				</div>
-				<!-- /.info-box-content -->
-			</div>
-			<!-- /.info-box -->
-		</div>
-		<!-- /.col -->
-	</div>
-	<!-- /.col -->
-  
-	<div class="box">
-		<div class="box-header theme-bg text-center">
-			<h3 class="box-title">Mystery Audit Program</h3>
-		</div>
-	
-<script>
-	function getCities(zone) {
-		$.ajax({
-			url: 'http://192.168.0.136:3000/api/utils/zones/'+zone,
-			
-      
-			success: function(response) {
-				createOptionscity(response);
-			
-			//	$('#supplierSelectWrapper').html(response).find('select').select2();
-			},
-			error: function(error) {
-				console.log(" Error Occured: \n");
-				console.log(error);
-			}
-		})
-		
-	}
-
-
-	$(document).ready(function() {
-
-		$('[name=order_date]').on('changeDate', function(date) {
-			$("[name=dispatch_date]").datepicker( "setStartDate", $(this).val());
-		})
-
-		$('[name=dispatch_date]').on('changeDate', function(date) {
-			$("[name=delivery_date]").datepicker( "setStartDate", $(this).val());
-		})
-
-		$('[name=order_date]').on('changeDate', function(date) {
-			$("[name=mfd]").datepicker( "setStartDate", $(this).val());
-		})
-
-	})
-
-	
-	
-
-</script>
-
-
-	<script>
-
-		
-	</script>
-
-	
+        <div class="pace-activity"></div>
     </div>
-    <div id="divgrid"><table id="example" class="table table-condensed table-hover table-striped">
-        <thead>
-            <tr id="datathead">
-              
-              
-              
-            </tr>
-        </thead>
-        <tbody id="tbody">
-            
-            
-        </tbody>
-    </table></div>
-	</div>
-  
-</section>
+    <!-- Site wrapper -->
+    <div class="wrapper" style="height: auto; min-height: 100%;">
 
-<!-- /.content -->
+        <header class="main-header">
+            <!-- Logo -->
+            <a href="#" class="logo">
+                <!-- mini logo for sidebar mini 50x50 pixels -->
+                <span class="logo-mini">
+                    <img src="./Dashboard _ Questionaire App_files/denave_logo.jpg" width="50">
+                </span>
+                <!-- logo for regular state and mobile devices -->
+                <span class="logo-lg">
+                    <img src="./Dashboard _ Questionaire App_files/denave_logo.jpg" width="150">
+                </span>
+            </a>
+            <!-- Header Navbar: style can be found in header.less -->
+            <nav class="navbar navbar-static-top">
+                <!-- Sidebar toggle button-->
+                <a href="https://retale.co.in/crm/operator/dashboard#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </a>
+
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+                        <!-- Messages: style can be found in dropdown.less-->
+                        <!-- User Account: style can be found in dropdown.less -->
+                        <li class="dropdown user user-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <img src="./Dashboard _ Questionaire App_files/3.png" class="user-image" alt="User Image">
+                                <span class="hidden-xs">deo</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <!-- User image -->
+                                <li class="user-header">
+                                    <img src="./Dashboard _ Questionaire App_files/3.png" class="img-circle" alt="User Image">
+
+                                    <p>
+                                        deo
+                                        <small>Member since July. 2018</small>
+                                    </p>
+                                </li>
+                                <!-- Menu Footer-->
+                                <li class="user-footer">
+                                    <div class="pull-left">
+                                        <a href="https://retale.co.in/crm/profile" class="btn btn-default btn-flat">Profile</a>
+                                    </div>
+                                    <div class="pull-right">
+                                        <a href="https://retale.co.in/crm/logout" class="btn btn-default btn-flat">Sign out</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- Control Sidebar Toggle Button -->
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <!-- =============================================== -->
+
+        <!-- Left side column. contains the sidebar -->
+        <aside class="main-sidebar">
+            <!-- sidebar: style can be found in sidebar.less -->
+            <section class="sidebar" style="height: auto;">
+                <!-- Sidebar user panel -->
+                <div class="user-panel">
+                    <div class="pull-left image">
+                        <img src="./Dashboard _ Questionaire App_files/3.png" class="img-circle" alt="User Image" style="height:  45px !important;">
+                    </div>
+                    <div class="pull-left info">
+                        <p>deo</p>
+                        <a href="https://retale.co.in/crm/operator/dashboard#">
+                            <i class="fa fa-circle text-success"></i> Online</a>
+                    </div>
+                </div>
+
+                <!-- sidebar menu: : style can be found in sidebar.less -->
+                <ul class="sidebar-menu tree" data-widget="tree">
+
+                    <li class="header">Main Navigation</li>
+
+                    <li>
+                        <a href="https://retale.co.in/crm/operator/dashboard">
+                            <i class="fa fa-dashboard"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+
+                    <li class="active">
+                        <a href="https://retale.co.in/crm/operator/surveys">
+                            <i class="fa fa-list-ul"></i>
+                            <span>Form Entries</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </section>
+            <!-- /.sidebar -->
+        </aside>
+
+        <!-- =============================================== -->
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper" style="min-height: 629px;">
 
 
-  </div>
-  <!-- /.content-wrapper -->
+            <!-- Content Header (Page header) -->
+            <section class="content-header">
+                <h1>
+                    Form Summary
+                </h1>
+            </section>
 
-  <!-- <footer class="main-footer">
+            <!-- Main content -->
+            <section class="content">
+
+                <div class="row">
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="info-box">
+                            <span class="info-box-icon bg-aqua">
+                                <i class="fa fa-file-text-o"></i>
+                            </span>
+
+                            <div class="info-box-content">
+                                <span class="info-box-text">Total Filled</span>
+                                <span class="info-box-number">35</span>
+                            </div>
+                            <!-- /.info-box-content -->
+                        </div>
+                        <!-- /.info-box -->
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="info-box">
+                            <span class="info-box-icon bg-green">
+                                <i class="fa fa-file-text-o"></i>
+                            </span>
+
+                            <div class="info-box-content">
+                                <span class="info-box-text">Validated</span>
+                                <span class="info-box-number">15</span>
+                            </div>
+                            <!-- /.info-box-content -->
+                        </div>
+                        <!-- /.info-box -->
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="info-box">
+                            <span class="info-box-icon bg-red">
+                                <i class="fa fa-file-text-o"></i>
+                            </span>
+
+                            <div class="info-box-content">
+                                <span class="info-box-text">Rejected</span>
+                                <span class="info-box-number">0</span>
+                            </div>
+                            <!-- /.info-box-content -->
+                        </div>
+                        <!-- /.info-box -->
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="info-box">
+                            <span class="info-box-icon bg-red">
+                                <i class="fa fa-file-text-o"></i>
+                            </span>
+
+                            <div class="info-box-content">
+                                <span class="info-box-text">Pending</span>
+                                <span class="info-box-number">13</span>
+                            </div>
+                            <!-- /.info-box-content -->
+                        </div>
+                        <!-- /.info-box -->
+                    </div>
+                    <!-- /.col -->
+                </div>
+                <!-- /.col -->
+
+                <div class="box">
+                    <div class="box-header theme-bg text-center">
+                        <h3 class="box-title">Mystery Audit Program</h3>
+                        <!-- <button class="btn btn-primary add_entries" style="float: right">
+                            <a style="color: white" href="./form_entries_create_update.html">Add</a>
+                        </button> -->
+                    </div>
+
+                    <script>
+                        function getCities(zone) {
+                            $.ajax({
+                                url: 'http://192.168.0.136:3000/api/utils/zones/' + zone,
+
+
+                                success: function (response) {
+                                    createOptionscity(response);
+
+                                    //	$('#supplierSelectWrapper').html(response).find('select').select2();
+                                },
+                                error: function (error) {
+                                    console.log(" Error Occured: \n");
+                                    console.log(error);
+                                }
+                            })
+
+                        }
+
+
+                        $(document).ready(function () {
+
+                            $('[name=order_date]').on('changeDate', function (date) {
+                                $("[name=dispatch_date]").datepicker("setStartDate", $(this).val());
+                            })
+
+                            $('[name=dispatch_date]').on('changeDate', function (date) {
+                                $("[name=delivery_date]").datepicker("setStartDate", $(this).val());
+                            })
+
+                            $('[name=order_date]').on('changeDate', function (date) {
+                                $("[name=mfd]").datepicker("setStartDate", $(this).val());
+                            })
+
+                        })
+
+
+
+
+                    </script>
+
+
+                    <script>
+
+
+                    </script>
+
+
+                </div>
+                <div id="divgrid">
+                    <table id="example" class="table table-condensed table-hover table-striped">
+                        <thead>
+                            <tr id="datathead">
+
+
+
+                            </tr>
+                        </thead>
+                        <tbody id="tbody">
+
+
+                        </tbody>
+                    </table>
+                </div>
+        </div>
+
+        </section>
+
+        <!-- /.content -->
+
+
+    </div>
+    <!-- /.content-wrapper -->
+
+    <!-- <footer class="main-footer">
     <strong>Copyright &copy; 2018 </strong> All rights
     reserved. <a href="//www.hwinfotech.com/">Denave</a>.
   </footer> -->
 
-</div>
-<!-- ./wrapper -->
+    </div>
+    <!-- ./wrapper -->
 
-<!-- Vertical form modal -->
-<div id="ajaxModal-html" class="modal fade">
-  <div class="modal-dialog">
-    <div class="modal-content">
+    <!-- Vertical form modal -->
+    <div id="ajaxModal-html" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
 
-      
+
+
+            </div>
+        </div>
+    </div>
+    <!-- /vertical form modal -->
+
+    <div class="modal-loading-template hidden">
+
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">×</button>
+            <h5 class="modal-title">Loading...</h5>
+        </div>
+
+        <div class="modal-body">
+            <div class="text-center">
+                <h3 class="icon-spinner3 spinner position-left"></h3>
+            </div>
+        </div>
+
+        <div class="modal-footer">
+            <button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+        </div>
 
     </div>
-  </div>
-</div>
-<!-- /vertical form modal -->
 
-<div class="modal-loading-template hidden">
+    <!-- date-range-picker -->
+    <script src="./Dashboard _ Questionaire App_files/moment.min.js.download"></script>
+    <script src="./Dashboard _ Questionaire App_files/daterangepicker.js.download"></script>
 
-  <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal">×</button>
-    <h5 class="modal-title">Loading...</h5>
-  </div>
+    <!-- bootstrap datepicker -->
+    <script src="./Dashboard _ Questionaire App_files/bootstrap-datepicker.min.js.download"></script>
 
-  <div class="modal-body">
-    <div class="text-center">
-      <h3 class="icon-spinner3 spinner position-left"></h3>
-    </div>
-  </div>
+    <!-- DataTables -->
+    <script src="./Dashboard _ Questionaire App_files/jquery.dataTables.min.js.download"></script>
+    <script src="./Dashboard _ Questionaire App_files/dataTables.bootstrap.min.js.download"></script>
 
-  <div class="modal-footer">
-    <button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
-  </div>
+    <!-- Validate  -->
+    <script src="./Dashboard _ Questionaire App_files/jquery.validate.min.js.download"></script>
 
-</div>
+    <!-- AdminLTE App -->
+    <script src="./Dashboard _ Questionaire App_files/adminlte.min.js.download"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="./Dashboard _ Questionaire App_files/demo.js.download"></script>
 
-<!-- date-range-picker -->
-<script src="./Dashboard _ Questionaire App_files/moment.min.js.download"></script>
-<script src="./Dashboard _ Questionaire App_files/daterangepicker.js.download"></script>
+    <!-- Select2 -->
+    <script src="./Dashboard _ Questionaire App_files/select2.full.min.js.download"></script>
 
-<!-- bootstrap datepicker -->
-<script src="./Dashboard _ Questionaire App_files/bootstrap-datepicker.min.js.download"></script>
+    <!-- pace -->
+    <script src="./Dashboard _ Questionaire App_files/pace.min.js.download"></script>
 
-<!-- DataTables -->
-<script src="./Dashboard _ Questionaire App_files/jquery.dataTables.min.js.download"></script>
-<script src="./Dashboard _ Questionaire App_files/dataTables.bootstrap.min.js.download"></script>
+    <!-- iCheck 1.0.1 -->
+    <script src="./Dashboard _ Questionaire App_files/icheck.min.js.download"></script>
 
-<!-- Validate  -->
-<script src="./Dashboard _ Questionaire App_files/jquery.validate.min.js.download"></script>
-
-<!-- AdminLTE App -->
-<script src="./Dashboard _ Questionaire App_files/adminlte.min.js.download"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="./Dashboard _ Questionaire App_files/demo.js.download"></script>
-
-<!-- Select2 -->
-<script src="./Dashboard _ Questionaire App_files/select2.full.min.js.download"></script>
-
-<!-- pace -->
-<script src="./Dashboard _ Questionaire App_files/pace.min.js.download"></script>
-
-<!-- iCheck 1.0.1 -->
-<script src="./Dashboard _ Questionaire App_files/icheck.min.js.download"></script>
-
-<script>
-
- 
-    function createHeader(){
-//     var arheaderarr=["supplier",
-// "date",
-// "orderId",
-// "oshopperName",
-// "city",
-// "ozone",
-// "orderDate",
-// "dispatchDate",
-// "deliveryDate",
-// "productType",
-// "roductName",
-// "productCategory",
-// "platform",
-// "batchCode",
-// "mafDate",
-// "townclass"]
-var arheaderarr=[
-"orderId",
-"orderDate",
-"dispatchDate",
-"deliveryDate",
-"productType",
-"ProductName",
-"productCategory"
-]
-for(var i=0;i<arheaderarr.length;i++){
-  var th='<th>'+arheaderarr[i]+'</th>';
-  $('#datathead').append(th);
-    }
-  }
-  createHeader();
-  $(document).ready(function() {
-   
-} );
-  $(document).ready(function () {
-    $('.sidebar-menu').tree()
-  })
-
-  $.validator.setDefaults( {
-    errorElement: "em",
-    errorPlacement: function ( error, element ) {
-      // Add the `help-block` class to the error element
-      error.addClass( "help-block" );
-
-      if ( element.prop( "type" ) === "checkbox" ) {
-        error.insertAfter( element.parent( "label" ) );
-      } else {
-        error.insertAfter( element );
-      }
-    },
-    highlight: function ( element, errorClass, validClass ) {
-      $( element ).parents( ".form-group" ).addClass( "has-error" ).removeClass( "has-success" );
-    },
-    unhighlight: function (element, errorClass, validClass) {
-      $( element ).parents( ".form-group" ).addClass( "has-success" ).removeClass( "has-error" );
-    }
-} );
-
-$.fn.openMenu = function () {
-        var className = $(this).attr('class');
-  if(className == "treeview"){
-    $(this).addClass("active");
-  }else if(className == "treeview-menu" ){
-    $(this).addClass("menu-open");
-    $(this).css({ display: "block" });
-  }
-};
-
-$.fn.closeMenu = function () {
-        var className = $(this).attr('class');
-  var count = $(this).length;
-  if(count > 1){
-    $.each($(this), function( key, element ) {
-      className = $(element).attr('class');
-      if(className == "treeview active"){
-        $(element).removeClass("active");
-      }else if(className == "treeview-menu menu-open" ){
-        $(element).removeClass("menu-open");
-        $(element).css({ display: "none" });
-      }
-    });
-  }else{
-    if(className == "treeview active"){
-      $(this).removeClass("active");
-    }else if(className == "treeview-menu menu-open" ){
-      $(this).removeClass("menu-open");
-      $(this).css({ display: "none" });
-    }
-  }
-};
-
-$(".search-menu-box").on('input', function() {
-    var filter = $(this).val();
-    $(".sidebar-menu > li").each(function(){
-        if ($(this).text().search(new RegExp(filter, "i")) < 0) {
-            $(this).hide();
-        } else {
-            $(this).show();
-            $(this).parentsUntil(".treeview").openMenu();
+    <script>
+        localStorage.removeItem('formData');
+        user = JSON.parse(localStorage.getItem('deved_user'));
+        if (user.role != 'deo') {
+            $('.add_entries').toggle();
         }
-    });
-});
+        function createHeader() {
+            //     var arheaderarr=["supplier",
+            // "date",
+            // "orderId",
+            // "oshopperName",
+            // "city",
+            // "ozone",
+            // "orderDate",
+            // "dispatchDate",
+            // "deliveryDate",
+            // "productType",
+            // "roductName",
+            // "productCategory",
+            // "platform",
+            // "batchCode",
+            // "mafDate",
+            // "townclass"]
+            var arheaderarr = [
+                "auditorId",
+                "orderId",
+                "productName",
+                "deliveryDate",
+                "orderDate",
+                "approved",
+                "action"
+            ]
+            for (var i = 0; i < arheaderarr.length; i++) {
+                var th = '<th>' + arheaderarr[i] + '</th>';
+                $('#datathead').append(th);
+            }
+        }
+        createHeader();
+        $(document).ready(function () {
 
-$('[data-ajax-modal]').on('click', function() {
+        });
+        $(document).ready(function () {
+            $('.sidebar-menu').tree()
+        })
 
-        event.preventDefault();
-        
-        $.ajax({
-            url: $(this).attr('href'),
-            data: {},
-            beforeSend: function() {
-                $('#ajaxModal-html').modal('show');
-                $('#ajaxModal-html').find('.modal-content').html( $('.modal-loading-template').html() );
+        $.validator.setDefaults({
+            errorElement: "em",
+            errorPlacement: function (error, element) {
+                // Add the `help-block` class to the error element
+                error.addClass("help-block");
+
+                if (element.prop("type") === "checkbox") {
+                    error.insertAfter(element.parent("label"));
+                } else {
+                    error.insertAfter(element);
+                }
             },
-            success: function(response) {
-                $('#ajaxModal-html').find('.modal-content').html( response );
-                
+            highlight: function (element, errorClass, validClass) {
+                $(element).parents(".form-group").addClass("has-error").removeClass("has-success");
             },
-            error: function() {
-                alert('Something Went Wrong ! Server Error Occured')
+            unhighlight: function (element, errorClass, validClass) {
+                $(element).parents(".form-group").addClass("has-success").removeClass("has-error");
             }
         });
 
-        return false;
-    })
-   griddata={};
-   function getgriddata(){
-    
-    $.ajax({
-      url: localStorage.getItem('BaseUrl')+'api/orders',
-      type: "Get",
-      headers: {"Authorization": localStorage.getItem('token')},
-       crossDoman:true,
-			success: function(response) {
-        $('#example').DataTable( {
-       
-        'data':response,
-        "columns": [
-        { "data": "orderId" },
-            { "data": "orderDate" },
-            { "data": "dispatchDate" },
-            { "data": "deliveryDate" },
-            { "data": "productType" },
-            { "data": "productName" },
-            { "data": "productCategory" }
-        ]
-       
-    } );
-        
-			//	$('#supplierSelectWrapper').html(response).find('select').select2();
-			},
-			error: function(error) {
-				console.log(" Error Occured: \n");
-				console.log(error);
-			}
-		})
-   }
-   getgriddata();
-   function createDataGrid(griddata){
-    var arheaderarr=[
-"orderId",
-"orderDate",
-"dispatchDate",
-"deliveryDate",
-"productType",
-"ProductName",
-"productCategory"
-]
-    var tdb=$('#tbody')[0];
-    var ht="";
-for(var i=0;i<griddata.length;i++){
-  var row="<td>";
-  for(var j=0;j<arheaderarr.length;j++){
-var col='<td>'+griddata[i].arheaderarr[j]+'</td>';
-}
-}
-   }
-</script>
+        $.fn.openMenu = function () {
+            var className = $(this).attr('class');
+            if (className == "treeview") {
+                $(this).addClass("active");
+            } else if (className == "treeview-menu") {
+                $(this).addClass("menu-open");
+                $(this).css({ display: "block" });
+            }
+        };
+
+        $.fn.closeMenu = function () {
+            var className = $(this).attr('class');
+            var count = $(this).length;
+            if (count > 1) {
+                $.each($(this), function (key, element) {
+                    className = $(element).attr('class');
+                    if (className == "treeview active") {
+                        $(element).removeClass("active");
+                    } else if (className == "treeview-menu menu-open") {
+                        $(element).removeClass("menu-open");
+                        $(element).css({ display: "none" });
+                    }
+                });
+            } else {
+                if (className == "treeview active") {
+                    $(this).removeClass("active");
+                } else if (className == "treeview-menu menu-open") {
+                    $(this).removeClass("menu-open");
+                    $(this).css({ display: "none" });
+                }
+            }
+        };
+
+        $(".search-menu-box").on('input', function () {
+            var filter = $(this).val();
+            $(".sidebar-menu > li").each(function () {
+                if ($(this).text().search(new RegExp(filter, "i")) < 0) {
+                    $(this).hide();
+                } else {
+                    $(this).show();
+                    $(this).parentsUntil(".treeview").openMenu();
+                }
+            });
+        });
+
+        $('[data-ajax-modal]').on('click', function () {
+
+            event.preventDefault();
+
+            $.ajax({
+                url: $(this).attr('href'),
+                data: {},
+                beforeSend: function () {
+                    $('#ajaxModal-html').modal('show');
+                    $('#ajaxModal-html').find('.modal-content').html($('.modal-loading-template').html());
+                },
+                success: function (response) {
+                    $('#ajaxModal-html').find('.modal-content').html(response);
+
+                },
+                error: function () {
+                    alert('Something Went Wrong ! Server Error Occured')
+                }
+            });
+
+            return false;
+        })
+        griddata = {};
+        function getgriddata() {
+
+            $.ajax({
+                url: localStorage.getItem('BaseUrl') + 'api/orders',
+                type: "Get",
+                headers: { "Authorization": localStorage.getItem('token') },
+                crossDoman: true,
+                success: function (response) {
+                    $('#example').DataTable({
+
+                        'data': response,
+                        "columns": [
+                            { "data": "auditorId" },
+                            { "data": "orderId" },
+                            { "data": "productName" },
+                            { "data": "deliveryDate" },
+                            { "data": "orderDate" },
+                            { "data": "approved" }
+                        ]
+
+                    });
+                    //	$('#supplierSelectWrapper').html(response).find('select').select2();
+                },
+                error: function (error) {
+                    console.log(" Error Occured: \n");
+                    console.log(error);
+                }
+            })
+        }
+        getgriddata();
+        // function createDataGrid(griddata) {
+        //     var arheaderarr = [
+        //         "auditorId",
+        //         "orderId",
+        //         "productName",
+        //         "deliveryDate",
+        //         "orderDate",
+        //         "approved"
+        //     ]
+        //     var tdb = $('#tbody')[0];
+        //     var ht = "";
+        //     for (var i = 0; i < griddata.length; i++) {
+        //         var row = "<td>";
+        //         for (var j = 0; j < arheaderarr.length; j++) {
+        //             var col = '<td>' + griddata[i].arheaderarr[j] + '</td>';
+        //         }
+        //     }
+        // }
+    </script>
 
 
 
-</body></html>
+</body>
+
+</html>
