@@ -18,11 +18,6 @@ var app = express();
 
 setUpMongo();
 
-if (!fs.existsSync('public/uploads')) {
-    fs.mkdirSync('public/uploads');
-}
-
-
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
