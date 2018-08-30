@@ -2,7 +2,7 @@ let mongoose = require('mongoose');
 let Schema = mongoose.Schema;
 
 let orderSchema = new Schema({
-    approved: {type: String, enum: ['accepted', 'rejected', 'required'], default: 'required'},
+    approved: {type: String, enum: ['accepted', 'rejected', 'pending'], default: 'pending'},
     auditorId: {type: String},
     supplier: {type: String, required: true},
     date: {type: Date},
@@ -20,6 +20,7 @@ let orderSchema = new Schema({
     platform: {type: String, required: true},
     batchCode: {type: String, required: true},
     mafDate: {type: Date, required: true},
+    remark: {type: String},
     questionnaire: [{
         qno: {type: Number},
         question: {type: String},

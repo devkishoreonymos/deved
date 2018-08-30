@@ -33,10 +33,16 @@ function createAuditorId(city, count) {
 async function updateOrder(req, res) {
     try {
         let user = res.locals.user;
-        if (user.role !== 'validator') {
+        if (user.role !== 'validator' || user.role !== 'deo') {
             return res.status(401).json({message: 'forbidden'});
         }
-        let order = await Order.findOneAndUpdate({_id: req.params.orderId}, {$set: {approved: req.query.action}});
+
+        let order;
+        if (user.role === 'validator') {
+            order = await Order.findOneAndUpdate({_id: req.params.orderId}, {$set: {approved: req.body.approved, remark: req.body.remark}});
+        } else {
+            order = await Order.findOneAndUpdate({_id: req.params.orderId}, req.body);
+        }
         res.status(200).json(order);
     } catch (err) {
         res.status(500).json({message: err});
