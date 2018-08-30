@@ -2,6 +2,7 @@ let Order = require('../model/order.model');
 let City = require('../model/city.model');
 let XLSX = require('xlsx');
 let fs = require('fs');
+let path = require('path');
 
 async function createOrder(req, res) {
     try {
@@ -78,21 +79,23 @@ async function getOrders(req, res) {
 
 async function getOrdersInExcel(req, res) {
     try {
-        let user = res.locals.user;
+        /*let user = res.locals.user;
 
         let orders;
         if (user.role === 'client') {
             req.query.approved = 'accepted';
             orders = await Order.find(req.query);
-        } else {
-            orders = await Order.find(req.query);
-        }
+        } else {*/
+            let orders = await Order.find(req.query, '-_id -__v -approved -remark');
+        //}
 
         let mapped = [];
         for (let i = 0; i < orders.length; i++) {
             for (let j = 0; j < orders[i].questionnaire.length; j++) {
-                orders[`${orders[i].questionnaire[j].qno} ${orders[i].questionnaire[j].question}`] =
-                    `${orders[i].questionnaire[j].answer} ${orders[i].questionnaire[j].remark} ${orders[i].questionnaire[j].file}`;
+                orders[`${orders[i].questionnaire[j].qno}: ${orders[i].questionnaire[j].question}`] =
+                    `${orders[i].questionnaire[j].answer}`;
+                orders[`${orders[i].questionnaire[j].qno}: pic`] = `${orders[i].questionnaire[j].file}`;
+                orders[`${orders[i].questionnaire[j].qno}: remark`] = `${orders[i].questionnaire[j].remark}`;
             }
 
             let temp = orders[i].toObject();
@@ -101,12 +104,17 @@ async function getOrdersInExcel(req, res) {
         }
 
         let ws = XLSX.utils.json_to_sheet(mapped, {header: Object.keys(mapped[0])});
-        let outputfile = `public/uploads/report-${Date.now()}.csv`;
+
+        if (!fs.existsSync('public/reports')) {
+            fs.mkdirSync('public/reports');
+        }
+
+        let outputfile = `public/reports/report-${Date.now()}.csv`;
         let stream = XLSX.stream.to_csv(ws);
         stream.pipe(fs.createWriteStream(outputfile));
 
-        stream.on('finish', () => {
-            res.status(200).json({file: `http://13.232.237.19/${outputfile}`});
+        stream.on('end', () => {
+            res.status(200).json({file: outputfile})
         })
 
     } catch (err) {

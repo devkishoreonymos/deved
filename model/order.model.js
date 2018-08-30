@@ -22,7 +22,7 @@ let orderSchema = new Schema({
     mafDate: {type: Date, required: true},
     remark: {type: String},
     questionnaire: [{
-        qno: {type: Number},
+        qno: {type: String},
         question: {type: String},
         answer: {type: String},
         remark: {type: String},
