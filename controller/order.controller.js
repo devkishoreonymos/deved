@@ -13,6 +13,9 @@ async function createOrder(req, res) {
 
         let count = await Order.countDocuments();
 
+        req.body = JSON.parse(req.body.data);
+        console.log(count, req.body);
+
         let city = await City.findOne({name: req.body.city});
 
         console.log(count, req.body);
@@ -34,7 +37,7 @@ function createAuditorId(city, count) {
 async function updateOrder(req, res) {
     try {
         let user = res.locals.user;
-        if (user.role !== 'validator' || user.role !== 'deo') {
+        if (user.role !== 'validator' && user.role !== 'deo') {
             return res.status(401).json({message: 'forbidden'});
         }
 
@@ -42,7 +45,9 @@ async function updateOrder(req, res) {
         if (user.role === 'validator') {
             order = await Order.findOneAndUpdate({_id: req.params.orderId}, {$set: {approved: req.body.approved, remark: req.body.remark}});
         } else {
-            order = await Order.findOneAndUpdate({_id: req.params.orderId}, req.body);
+
+            let data = JSON.parse(req.body.data);
+            order = await Order.findOneAndUpdate({_id: req.params.orderId}, data);
         }
         res.status(200).json(order);
     } catch (err) {
@@ -79,15 +84,15 @@ async function getOrders(req, res) {
 
 async function getOrdersInExcel(req, res) {
     try {
-        /*let user = res.locals.user;
+        let user = res.locals.user;
 
         let orders;
         if (user.role === 'client') {
             req.query.approved = 'accepted';
-            orders = await Order.find(req.query);
-        } else {*/
-            let orders = await Order.find(req.query, '-_id -__v -approved -remark');
-        //}
+            orders = await Order.find(req.query, '-_id -__v -approved');
+        } else {
+            orders = await Order.find(req.query, '-_id -__v');
+        }
 
         let mapped = [];
         for (let i = 0; i < orders.length; i++) {
