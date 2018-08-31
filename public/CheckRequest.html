@@ -446,7 +446,7 @@
                             // $('#selectcity').empty();
                             $("#town_filter option").remove();
                             var op = document.createElement('option');
-                            op.value = "Select your city";
+                            op.value = "";
                             op.text = "Select your city";
                             $('#town_filter')[0].appendChild(op);
                             for (var i = 0; i < obj.length; i++) {
@@ -478,8 +478,8 @@
                         function applyFilter() {
                             var url = localStorage.getItem('BaseUrl') + 'api/orders?';
                             $('#zone_filter').val() ? url = url + '&zone=' + $('#zone_filter').val() : '';
-                            $('#platform_filter').val() ? url = url + '&supplier=' + $('#platform_filter').val() : '';
-                            $('#supplier_filter').val() ? url = url + '&zone=' + $('#supplier_filter').val() : '';
+                            $('#platform_filter').val() ? url = url + '&platform=' + $('#platform_filter').val() : '';
+                            $('#supplier_filter').val() ? url = url + '&supplier=' + $('#supplier_filter').val() : '';
                             $('#town_filter').val() ? url = url + '&city=' + $('#town_filter').val() : '';
                             $('#product_filter').val() ? url = url + '&productCategory=' + $('#product_filter').val() : '';
                             $("#example").dataTable().fnDestroy();
