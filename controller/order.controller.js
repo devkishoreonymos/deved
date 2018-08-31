@@ -120,7 +120,7 @@ async function getOrdersInExcel(req, res) {
         stream.pipe(fs.createWriteStream(outputfile));
 
         stream.on('end', () => {
-            res.status(200).json({file: outputfile})
+            res.status(200).json({file: `http://13.232.237.19/${outputfile}`});
         })
 
     } catch (err) {
