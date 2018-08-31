@@ -413,7 +413,7 @@
 
                                 success: function (response) {
                                     window.open(
-                                        localStorage.getItem('BaseUrl') + response.file,
+                                        response.file,
                                         '_blank' // <- This is what makes it open in a new window.
                                     );
                                 },

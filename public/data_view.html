@@ -327,7 +327,8 @@
             </section>
             <!-- /.content -->
             <script>
-
+                var user = JSON.parse(localStorage.getItem('deved_user'));
+                $('.user_role').text(user.role);
                 var searchParams = new URLSearchParams(window.location.search);
                 var id = searchParams.get('id');
                 console.log(id)

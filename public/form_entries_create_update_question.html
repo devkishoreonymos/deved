@@ -502,8 +502,8 @@
                                         name: 'Mentioned_Make',
                                         question: 'Mentioned Make of Gel Pad ?',
                                         options: ['Yes', 'No'],
-                                        type: 'Radio',
-                                        remarks: false,
+                                        type: 'number',
+                                        remarks: true,
                                         file: true,
                                         for: 'Q17'
                                     },
@@ -635,7 +635,7 @@
                                         type: 'Radio',
                                         remarks: false,
                                         file: true,
-                                        for: 'Q30'
+                                        for: 'Q31'
                                     }
                                 ]
                             }
@@ -709,13 +709,23 @@
 
                                         }
                                     } else if (questions[sec][i].type == 'number') {
-                                        form_group = `<div class="form-group">
+                                        if (questions[sec][i].for == 'Q17') {
+                                            form_group = `<div class="form-group">
                                         <div class="question-label">
                                             <label for=${questions[sec][i].for}>${questions[sec][i].question}</label>
                                         </div>`;
-                                        var form_check = `<div class="form-check form-check-inline">
+                                            var form_check = `<div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="number" name=${questions[sec][i].name + '_year'} id="_year" value="" placeholder="Year">
+                                        </div>`;
+                                        } else {
+                                            form_group = `<div class="form-group">
+                                        <div class="question-label">
+                                            <label for=${questions[sec][i].for}>${questions[sec][i].question}</label>
+                                        </div>`;
+                                            var form_check = `<div class="form-check form-check-inline">
                                             <input class="form-check-input" type="number" name=${questions[sec][i].name} id="" value="" placeholder="Total Counts">
                                         </div>`;
+                                        }
                                     }
                                     if (questions[sec][i].file) {
                                         var file = `<div class="form-check form-check-inline">
@@ -733,7 +743,7 @@
                                     section = section + form_group;
                                 }
                                 document.getElementById(secionType).innerHTML = section;
-                                if (id) { 
+                                if (id) {
                                     fillData();
                                 }
                                 if (searchParams.get('edit') && searchParams.get('edit') == 'false') {
@@ -798,7 +808,11 @@
                                         if (questions[quesTypes[k]][l].type == 'Radio') {
                                             var ans = $(`input[type=radio][name=${questions[quesTypes[k]][l]['name']}]:checked`).val() || 'NA';
                                         } else if (questions[quesTypes[k]][l].type == 'Number') {
-                                            var ans = $(`input[type=number][name=${questions[quesTypes[k]][l]['name']}]`).val() || 'NA';
+                                            if (questions[quesTypes[k]][l]['name'] == 'Mentioned_Make') {
+                                                var ans = $(`input[type=number][id="_year"]`).val() || 'NA' ;
+                                            } else {
+                                                var ans = $(`input[type=number][name=${questions[quesTypes[k]][l]['name']}]`).val() || 'NA';
+                                            }
                                         }
                                         if (questions[quesTypes[k]][l].remarks) {
                                             var remarks = $(`textarea[type=text][id=${questions[quesTypes[k]][l]['name']}]`).val() || 'NA';
@@ -827,7 +841,7 @@
                                             "Authorization": localStorage.getItem('token')
                                         },
                                         success: function (response) {
-                                             window.location = "CheckRequest.html";
+                                            window.location = "CheckRequest.html";
                                         },
                                         error: function (xhr, status, error) {
                                             console.log(error);
@@ -845,7 +859,7 @@
                                             "Authorization": localStorage.getItem('token')
                                         },
                                         success: function (response) {
-                                             window.location = "CheckRequest.html";
+                                            window.location = "CheckRequest.html";
                                         },
                                         error: function (xhr, status, error) {
                                             console.log(error);
