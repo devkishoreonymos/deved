@@ -96,14 +96,15 @@ async function getOrdersInExcel(req, res) {
 
         let mapped = [];
         for (let i = 0; i < orders.length; i++) {
-            for (let j = 0; j < orders[i].questionnaire.length; j++) {
-                orders[`${orders[i].questionnaire[j].qno}: ${orders[i].questionnaire[j].question}`] =
-                    `${orders[i].questionnaire[j].answer}`;
-                orders[`${orders[i].questionnaire[j].qno}: pic`] = `${orders[i].questionnaire[j].file}`;
-                orders[`${orders[i].questionnaire[j].qno}: remark`] = `${orders[i].questionnaire[j].remark}`;
+            let temp = orders[i].toObject();
+            for (let j = 0; j < temp.questionnaire.length; j++) {
+                temp[`${temp.questionnaire[j].qno}: ${temp.questionnaire[j].question}`] =
+                    temp.questionnaire[j].answer ? `${temp.questionnaire[j].answer}`: 'NA';
+                temp[`${temp.questionnaire[j].qno}: pic`] = temp.questionnaire[j].file ? `${temp.questionnaire[j].file}`: 'NA';
+                temp[`${temp.questionnaire[j].qno}: remark`] = temp.questionnaire[j].remark ? `${temp.questionnaire[j].remark}`: 'NA';
             }
 
-            let temp = orders[i].toObject();
+
             delete temp.questionnaire;
             mapped.push(temp);
         }
