@@ -583,19 +583,23 @@
                                 for (var i in response) {
                                     $(`#platform`).val(response.platform).change();
                                     $(`#supplier`).val(response.supplier);
-                                    $(`#dashboarddate`).val(response.date);
+                                    $(`#dashboarddate`).val(response.date.substring(0, 10));
                                     $(`#order_id`).val(response.orderId);
                                     $(`#txtshopper`).val(response.shopperName);
                                     $(`#selectcity`).val(response.city).change();
                                     $(`#zone`).val(response.zone).change();
-                                    $(`#order_date`).val(response.orderDate);
-                                    $(`#txtdispatch_date`).val(response.dispatchDate);
-                                    $(`#txtdelivery_date`).val(response.deliveryDate);
+                                    $(`#order_date`).val(response.orderDate.substring(0, 10));
+                                    $(`#txtdispatch_date`).val(response.dispatchDate.substring(0, 10));
+                                    $(`#txtdelivery_date`).val(response.deliveryDate.substring(0, 10));
                                     $(`#selectproduct_type`).val(response.productType).change();
                                     $(`#product_name`).val(response.productName).change();
                                     $(`#product_category`).val(response.productCategory).change();
                                     $(`#txtbatchcode`).val(response.batchCode);
-                                    $(`#mfd`).val(response.mafDate);
+                                    $(`#mfd`).val(response.mafDate.substring(0, 10));
+                                }
+                                $('.datepicker').datepicker({ format: 'dd MM, yyyy' });
+                                if (searchParams.get('edit') && searchParams.get('edit') == 'false') {
+                                    $(".form-control").attr('disabled','true');
                                 }
                             }
 
@@ -646,6 +650,7 @@
 
                             function createOptionscity(obj, data) {
                                 // $('#selectcity').empty();
+                                $("#selectcity option").remove();
                                 var op = document.createElement('option');
                                 op.value = "Select your city";
                                 op.text = "Select your city";

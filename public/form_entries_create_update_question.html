@@ -407,7 +407,7 @@
                                         for: 'Q6'
                                     },
                                     {
-                                        name: 'communicated_on_Mobile',
+                                        name: 'delivery_made_on_time',
                                         question: 'Was the delivery made on date & time mentioned by you?',
                                         options: ['Yes', 'No',],
                                         type: 'Radio',
@@ -733,20 +733,24 @@
                                     section = section + form_group;
                                 }
                                 document.getElementById(secionType).innerHTML = section;
-                                if (id) {
+                                if (id) { 
                                     fillData();
+                                }
+                                if (searchParams.get('edit') && searchParams.get('edit') == 'false') {
+                                    $(':radio:not(:checked)').attr('disabled', true);
                                 }
                             }
 
                             function fillData() {
                                 setTimeout(() => {
-                                    for (let index = 1; index <= questionaireData.length; index++) {
+                                    for (let index = 0; index < questionaireData.length; index++) {
                                         if (questionaireData[index].answer != 'NA') {
-                                            var qn = questionaireData[index].qno;
-                                            if ($(`input[fill=${qn}]`) && $(`input[fill=${qn}]`)[0].type == 'radio') {
-                                                $(`input[fill=${qn}][value=${questionaireData[index].answer}]`).prop('checked', true);
+                                            var qn = questionaireData[index].qno.toString();
+                                            var ans = questionaireData[index].answer.toString();
+                                            if ($(`input[fill="${qn}"]`) && $(`input[fill="${qn}"]`)[0] && $(`input[fill="${qn}"]`)[0].type == 'radio') {
+                                                $(`input[fill="${qn}"][value="${ans}"]`).prop('checked', true);
                                             } else {
-                                                $(`input[fill=${qn}]`).val(questionaireData[index].answer);
+                                                $(`input[fill="${qn}"]`).val(ans);
                                             }
                                         }
                                     }
@@ -823,7 +827,7 @@
                                             "Authorization": localStorage.getItem('token')
                                         },
                                         success: function (response) {
-                                            // window.location = "CheckRequest.html";
+                                             window.location = "CheckRequest.html";
                                         },
                                         error: function (xhr, status, error) {
                                             console.log(error);
@@ -841,7 +845,7 @@
                                             "Authorization": localStorage.getItem('token')
                                         },
                                         success: function (response) {
-                                            // window.location = "CheckRequest.html";
+                                             window.location = "CheckRequest.html";
                                         },
                                         error: function (xhr, status, error) {
                                             console.log(error);

@@ -107,6 +107,10 @@
         .export_report {
             display: none;
         }
+
+        .client_filter {
+            display: none;
+        }
     </style>
 
 
@@ -165,7 +169,7 @@
                                 </li>
                                 <!-- Menu Footer-->
                                 <li class="user-footer">
-                                    
+
                                     <div class="pull-right">
                                         <a href="index.html" class="btn btn-default btn-flat">Sign out</a>
                                     </div>
@@ -238,6 +242,81 @@
             <!-- Main content -->
             <section class="content">
 
+
+                <div class="box client_filter">
+                    <div class="box-body">
+                        <form>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label class="control-label">Zone</label>
+                                        <select name="platform" id="zone_filter" class="form-control select2 " style="width: 100%;" aria-hidden="true" onChange="getCities()">
+                                            <option value="">Select zone</option>
+                                            <option value="East">East</option>
+                                            <option value="West">West</option>
+                                            <option value="North">North</option>
+                                            <option value="South">South</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label class="control-label">Platform</label>
+                                        <select name="platform" id="platform_filter" class="form-control select2 " style="width: 100%;">
+                                            <option value="">Select Platform</option>
+                                            <option value="Amazon">Amazon</option>
+                                            <option value="PayTm">PayTm</option>
+                                            <option value="Cadbury Gifting">Cadbury Gifting</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label class="control-label">Supplier/Distributor Name</label>
+                                        <select name="" id="supplier_filter" class="form-control select2 " style="width: 100%;">
+                                            <option value="">Select Supplier/Distributor</option>
+                                            <option value="Cloudtail">Cloudtail</option>
+                                            <option value="TBL">TBL</option>
+                                            <option value="Cadbury Joy Delivery">Cadbury Joy Delivery</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label class="control-label">Town Class</label>
+                                        <select name="" id="town_filter" class="form-control select2 " style="width: 100%;">
+                                            <option value="">Select Town Class</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label for="" class="control-label">Product Category </label>
+                                        <br>
+                                        <select name="" id="product_filter" class="form-control select2 " style="width: 100%;">
+                                            <option value="">Select Product Category</option>
+                                            <option value="Premium Category">Premium Category</option>
+                                            <option value="Gifting">Gifting</option>
+                                            <option value="Bal Choc">Bal Choc</option>
+                                            <option value="CJD">CJD</option>
+                                            <option value="D2C Customised">D2C Customised</option>
+                                            <option value="D2C Personalised">D2C Personalised</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="pull-left">
+                                        <label style="width: 100%;">&nbsp;</label>
+                                        <button type="button" onClick="clearFilter()" class="btn btn-info btn-flat">Reset</button>
+                                        <button type="button" onClick="applyFilter()" class="btn btn-info btn-flat">Search</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
                 <div class="row stats_row">
                     <div class="col-md-3 col-sm-6 col-xs-12">
                         <div class="info-box">
@@ -345,9 +424,10 @@
                             })
 
                         }
+
                         function getCities(zone) {
                             $.ajax({
-                                url: localStorage.getItem('BaseUrl') + 'api/utils/zones/' + zone,
+                                url: localStorage.getItem('BaseUrl') + 'api/utils/zones/' + $('#zone_filter').val(),
 
 
                                 success: function (response) {
@@ -361,6 +441,22 @@
                                 }
                             })
 
+                        }
+
+                        function createOptionscity(obj, data) {
+                            // $('#selectcity').empty();
+                            $("#town_filter option").remove();
+                            var op = document.createElement('option');
+                            op.value = "Select your city";
+                            op.text = "Select your city";
+                            $('#town_filter')[0].appendChild(op);
+                            for (var i = 0; i < obj.length; i++) {
+                                var op = document.createElement('option');
+                                op.value = obj[i].name;
+                                op.text = obj[i].name;
+                                op.setAttribute('townclass', obj[i].townClass);
+                                $('#town_filter')[0].appendChild(op);
+                            }
                         }
 
 
@@ -380,7 +476,28 @@
 
                         })
 
+                        function applyFilter() {
+                            var url = localStorage.getItem('BaseUrl') + 'api/orders?';
+                            $('#zone_filter').val() ? url = url +'&zone='+ $('#zone_filter').val() : '';
+                            $('#platform_filter').val() ? url = url +'&supplier='+ $('#platform_filter').val() : '';
+                            $('#supplier_filter').val() ? url = url +'&zone='+ $('#supplier_filter').val() : '';
+                            $('#town_filter').val() ? url = url +'&city='+ $('#town_filter').val() : '';
+                            $('#product_filter').val() ? url = url +'&productCategory='+ $('#product_filter').val() : '';
+                            $("#example").dataTable().fnDestroy();
+                            getgriddata(url);
+                        }
 
+                        function clearFilter() {
+                            // alert("hi")
+                            $('#zone_filter option:first').attr('selected', true);
+                            $('#platform_filter option:first').attr('selected', true);
+                            $('#supplier_filter option:first').attr('selected', true);
+                            $('#town_filter option:first').attr('selected', true);
+                            $('#product_filter option:first').attr('selected', true);
+                            $("#example").dataTable().fnDestroy();
+                            var url = localStorage.getItem('BaseUrl') + 'api/orders?';
+                            getgriddata(url);
+                        }
 
 
                     </script>
@@ -624,13 +741,14 @@
         }
         if (user.role == 'client') {
             $('.stats_row').toggle();
+            $('.client_filter').toggle();
         } else {
             getStats();
         }
-        function getgriddata() {
-
+        function getgriddata(url) {
+            var apiUrl = url ? url : localStorage.getItem('BaseUrl') + 'api/orders';
             $.ajax({
-                url: localStorage.getItem('BaseUrl') + 'api/orders',
+                url: apiUrl,
                 type: "Get",
                 headers: { "Authorization": localStorage.getItem('token') },
                 crossDoman: true,
@@ -689,7 +807,7 @@
             var parentTag = $(curr).parent().parent();
             var table = $('#example').DataTable();
             var selectedorder = table.row(parentTag).data();
-            window.location = "form_entries_create_update.html?edit=false&id=" + selectedorder._id;
+            window.location = "data_view.html?edit=false&id=" + selectedorder._id;
         }
 
         function ApproveRequest(curr) {
