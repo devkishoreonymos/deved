@@ -404,17 +404,27 @@
                         }
 
                         function getReport() {
+                            var url = localStorage.getItem('BaseUrl') + 'api/orders/excel?';
+                            $('#zone_filter').val() ? url = url + '&zone=' + $('#zone_filter').val() : '';
+                            $('#platform_filter').val() ? url = url + '&platform=' + $('#platform_filter').val() : '';
+                            $('#supplier_filter').val() ? url = url + '&supplier=' + $('#supplier_filter').val() : '';
+                            $('#town_filter').val() ? url = url + '&city=' + $('#town_filter').val() : '';
+                            $('#product_filter').val() ? url = url + '&productCategory=' + $('#product_filter').val() : '';
                             $.ajax({
-                                url: localStorage.getItem('BaseUrl') + 'api/orders/excel',
+                                url: url,
                                 type: "GET",
                                 crossDoman: true,
                                 headers: { "Authorization": localStorage.getItem('token') },
 
                                 success: function (response) {
-                                    window.open(
-                                        response.file,
-                                        '_blank' // <- This is what makes it open in a new window.
-                                    );
+                                    if (response.file) {
+                                        window.open(
+                                            response.file,
+                                            '_blank' // <- This is what makes it open in a new window.
+                                        );
+                                    } else {
+                                        alert("Unable to download data! Try again.")
+                                    }
                                 },
                                 error: function (error) {
                                     console.log(" Error Occured: \n");
