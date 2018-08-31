@@ -334,7 +334,7 @@
                         </div>
                     </div>
                     <div class="box-body">
-                        <button id="btnlogin" type="button" class="btn btn-primary approve_reject_accept" onClick="statusChangeRequest('accepted')">Approve</button>
+                        <button id="btnlogin" type="button" class="btn btn-primary approve_reject_accept" onClick="statusChangeRequest({ approved: 'accepted', remark: '' })">Approve</button>
                         <button id="btnlogin" type="button" class="btn btn-danger approve_reject_accept" data-toggle="modal" data-target="#myModal" >Reject</button>
                     </div>
                 </div>
@@ -397,17 +397,16 @@
 
                 function remarkForReject(status) {
                     var remark = $("#rejection_text").val() || 'NA'
-                    statusChangeRequest(status, { approved: status, remark: remark });
+                    statusChangeRequest({ approved: status, remark: remark });
                 }
 
-                function statusChangeRequest(status, data) {
-                    var obj = data ? data : { approved: status };
+                function statusChangeRequest(data) {
                     $.ajax({
                         url: localStorage.getItem('BaseUrl') + 'api/orders/' + id,
                         type: "PUT",
                         crossDoman: true,
                         headers: { "Authorization": localStorage.getItem('token') },
-                        data: obj,
+                        data: data,
                         success: function (response) {
                             window.location = "CheckRequest.html";
                         },
