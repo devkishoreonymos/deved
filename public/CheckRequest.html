@@ -242,7 +242,68 @@
             <!-- Main content -->
             <section class="content">
 
+                <div class="row stats_row">
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="info-box">
+                            <span class="info-box-icon bg-aqua">
+                                <i class="fa fa-file-text-o"></i>
+                            </span>
 
+                            <div class="info-box-content">
+                                <span class="info-box-text">Total Filled</span>
+                                <span class="info-box-number total_filled">0</span>
+                            </div>
+                            <!-- /.info-box-content -->
+                        </div>
+                        <!-- /.info-box -->
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="info-box">
+                            <span class="info-box-icon bg-green">
+                                <i class="fa fa-file-text-o"></i>
+                            </span>
+
+                            <div class="info-box-content">
+                                <span class="info-box-text">Validated</span>
+                                <span class="info-box-number total_validated">15</span>
+                            </div>
+                            <!-- /.info-box-content -->
+                        </div>
+                        <!-- /.info-box -->
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="info-box">
+                            <span class="info-box-icon bg-red">
+                                <i class="fa fa-file-text-o"></i>
+                            </span>
+
+                            <div class="info-box-content">
+                                <span class="info-box-text">Rejected</span>
+                                <span class="info-box-number total_rejected">0</span>
+                            </div>
+                            <!-- /.info-box-content -->
+                        </div>
+                        <!-- /.info-box -->
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="info-box">
+                            <span class="info-box-icon bg-red">
+                                <i class="fa fa-file-text-o"></i>
+                            </span>
+
+                            <div class="info-box-content">
+                                <span class="info-box-text">Pending</span>
+                                <span class="info-box-number total_pending">13</span>
+                            </div>
+                            <!-- /.info-box-content -->
+                        </div>
+                        <!-- /.info-box -->
+                    </div>
+                    <!-- /.col -->
+                </div>
                 <div class="box client_filter">
                     <div class="box-body">
                         <form>
@@ -316,68 +377,6 @@
                             </div>
                         </form>
                     </div>
-                </div>
-                <div class="row stats_row">
-                    <div class="col-md-3 col-sm-6 col-xs-12">
-                        <div class="info-box">
-                            <span class="info-box-icon bg-aqua">
-                                <i class="fa fa-file-text-o"></i>
-                            </span>
-
-                            <div class="info-box-content">
-                                <span class="info-box-text">Total Filled</span>
-                                <span class="info-box-number total_filled">0</span>
-                            </div>
-                            <!-- /.info-box-content -->
-                        </div>
-                        <!-- /.info-box -->
-                    </div>
-                    <!-- /.col -->
-                    <div class="col-md-3 col-sm-6 col-xs-12">
-                        <div class="info-box">
-                            <span class="info-box-icon bg-green">
-                                <i class="fa fa-file-text-o"></i>
-                            </span>
-
-                            <div class="info-box-content">
-                                <span class="info-box-text">Validated</span>
-                                <span class="info-box-number total_validated">15</span>
-                            </div>
-                            <!-- /.info-box-content -->
-                        </div>
-                        <!-- /.info-box -->
-                    </div>
-                    <!-- /.col -->
-                    <div class="col-md-3 col-sm-6 col-xs-12">
-                        <div class="info-box">
-                            <span class="info-box-icon bg-red">
-                                <i class="fa fa-file-text-o"></i>
-                            </span>
-
-                            <div class="info-box-content">
-                                <span class="info-box-text">Rejected</span>
-                                <span class="info-box-number total_rejected">0</span>
-                            </div>
-                            <!-- /.info-box-content -->
-                        </div>
-                        <!-- /.info-box -->
-                    </div>
-                    <!-- /.col -->
-                    <div class="col-md-3 col-sm-6 col-xs-12">
-                        <div class="info-box">
-                            <span class="info-box-icon bg-red">
-                                <i class="fa fa-file-text-o"></i>
-                            </span>
-
-                            <div class="info-box-content">
-                                <span class="info-box-text">Pending</span>
-                                <span class="info-box-number total_pending">13</span>
-                            </div>
-                            <!-- /.info-box-content -->
-                        </div>
-                        <!-- /.info-box -->
-                    </div>
-                    <!-- /.col -->
                 </div>
                 <!-- /.col -->
 
@@ -478,11 +477,11 @@
 
                         function applyFilter() {
                             var url = localStorage.getItem('BaseUrl') + 'api/orders?';
-                            $('#zone_filter').val() ? url = url +'&zone='+ $('#zone_filter').val() : '';
-                            $('#platform_filter').val() ? url = url +'&supplier='+ $('#platform_filter').val() : '';
-                            $('#supplier_filter').val() ? url = url +'&zone='+ $('#supplier_filter').val() : '';
-                            $('#town_filter').val() ? url = url +'&city='+ $('#town_filter').val() : '';
-                            $('#product_filter').val() ? url = url +'&productCategory='+ $('#product_filter').val() : '';
+                            $('#zone_filter').val() ? url = url + '&zone=' + $('#zone_filter').val() : '';
+                            $('#platform_filter').val() ? url = url + '&supplier=' + $('#platform_filter').val() : '';
+                            $('#supplier_filter').val() ? url = url + '&zone=' + $('#supplier_filter').val() : '';
+                            $('#town_filter').val() ? url = url + '&city=' + $('#town_filter').val() : '';
+                            $('#product_filter').val() ? url = url + '&productCategory=' + $('#product_filter').val() : '';
                             $("#example").dataTable().fnDestroy();
                             getgriddata(url);
                         }
@@ -628,6 +627,7 @@
                 "deliveryDate",
                 "orderDate",
                 "approved",
+                "remark",
                 "Action",
 
             ]
@@ -742,6 +742,8 @@
         if (user.role == 'client') {
             $('.stats_row').toggle();
             $('.client_filter').toggle();
+        } else if (user.role == 'admin') {
+            $('.client_filter').toggle();
         } else {
             getStats();
         }
@@ -763,20 +765,20 @@
                             { "data": "deliveryDate" },
                             { "data": "orderDate" },
                             { "data": "approved" },
+                            { "data": "remark" },
                             { "data": "orderId" }
 
 
                         ],
                         'columnDefs': [{
-                            'targets': [6],
+                            "defaultContent": "-",
+                            'targets': [7],
                             'searchable': false,
                             'orderable': false,
                             'className': 'dt-body-center',
                             'render': function (data, type, full, meta) {
                                 return `<span  class="fa fa-eye" onClick="showData(this);" style="color:green; margin-right:5px;" aria-hidden="true"></span>
-                                <span  class="fa fa-edit ${user.role == 'deo' ? '' : 'accept_btn'}" onClick="editData(this);" style="color:green; margin-right:5px;" aria-hidden="true"></span>
-                                <span  class="fa fa-check ${showBtn ? 'accept_btn' : ''}" onClick="ApproveRequest(this);" style="color:green; margin-right:5px;" aria-hidden="true"></span>
-                                <span class="fa fa-times ${showBtn ? 'accept_btn' : ''}" onClick="RejectRequest(this);" style="color:red" aria-hidden="true"></span>`;
+                                <span  class="fa fa-edit ${user.role == 'deo' ? '' : 'accept_btn'}" onClick="editData(this);" style="color:green; margin-right:5px;" aria-hidden="true"></span>`;
 
                             },
                         }],

@@ -98,6 +98,16 @@
         .img-avtar {
             border-radius: 50%;
         }
+
+        .approve_reject_accept {
+            display: none;
+        }
+
+        #rejection_text {
+            width: 100%;
+            height: 80px;
+            resize: none;
+        }
     </style>
 
 
@@ -180,7 +190,7 @@
                         <img src="./Dashboard _ Questionaire App_files/3.png" class="img-circle" alt="User Image" style="height:  45px !important;">
                     </div>
                     <div class="pull-left info">
-                        <span class="hidden-xs user_role">deo</span>
+                        <p class="hidden-xs user_role">deo</p>
                         <a href="https://retale.co.in/crm/operator/dashboard#">
                             <i class="fa fa-circle text-success"></i> Online</a>
                     </div>
@@ -323,15 +333,22 @@
                             </div>
                         </div>
                     </div>
+                    <div class="box-body">
+                        <button id="btnlogin" type="button" class="btn btn-primary approve_reject_accept" onClick="statusChangeRequest({ approved: 'accepted', remark: '' })">Approve</button>
+                        <button id="btnlogin" type="button" class="btn btn-danger approve_reject_accept" data-toggle="modal" data-target="#myModal" >Reject</button>
+                    </div>
                 </div>
             </section>
             <!-- /.content -->
             <script>
                 var user = JSON.parse(localStorage.getItem('deved_user'));
                 $('.user_role').text(user.role);
+                if (user.role == 'validator') {
+                    $('.approve_reject_accept').toggle();
+                }
                 var searchParams = new URLSearchParams(window.location.search);
                 var id = searchParams.get('id');
-                console.log(id)
+                console.log("sdasdasd", id)
                 if (id) {
                     $.ajax({
                         url: localStorage.getItem('BaseUrl') + 'api/orders/' + id,
@@ -377,6 +394,27 @@
                     }
                     document.getElementById('questions_body').innerHTML = rows;
                 }
+
+                function remarkForReject(status) {
+                    var remark = $("#rejection_text").val() || 'NA'
+                    statusChangeRequest({ approved: status, remark: remark });
+                }
+
+                function statusChangeRequest(data) {
+                    $.ajax({
+                        url: localStorage.getItem('BaseUrl') + 'api/orders/' + id,
+                        type: "PUT",
+                        crossDoman: true,
+                        headers: { "Authorization": localStorage.getItem('token') },
+                        data: data,
+                        success: function (response) {
+                            window.location = "CheckRequest.html";
+                        },
+                        error: function (xhr, status, error) {
+                            alert('Something Went Wrong ! Try Again.')
+                        }
+                    })
+                }
             </script>
 
         </div>
@@ -389,7 +427,26 @@
 
     </div>
     <!-- ./wrapper -->
-
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">Remarks for rejection.</h4>
+                </div>
+                <div class="modal-body">
+                    <textarea id="rejection_text"></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onClick="remarkForReject('rejected')">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
     <!-- Vertical form modal -->
     <div id="ajaxModal-html" class="modal fade">
         <div class="modal-dialog">

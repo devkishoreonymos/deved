@@ -557,10 +557,12 @@
                                 })
                             }
                             var citiesData = [];
+                            var zoneLast = [];
                             function getCities(zone, data) {
-                                if (citiesData.length) {
+                                if (citiesData.length && zoneLast == zone) {
                                     createOptionscity(citiesData, data);
                                 } else {
+                                    zoneLast = zone;
                                     $.ajax({
                                         url: localStorage.getItem('BaseUrl') + 'api/utils/zones/' + zone,
 
