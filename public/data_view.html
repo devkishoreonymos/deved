@@ -82,7 +82,9 @@
     </script>
 
     <!-- Bootstrap 3.3.7 -->
-    <script src="../Dashboard _ Questionaire App_files/bootstrap.min.js.download"></script>
+    <!-- <script src="../Dashboard _ Questionaire App_files/bootstrap.min.js.download"></script> -->
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     <!-- SlimScroll -->
     <script src="../Dashboard _ Questionaire App_files/jquery.slimscroll.min.js.download"></script>
@@ -237,16 +239,77 @@
                                     <tbody>
                                         <tr>
                                             <td>Platform</td>
-                                            <td>Amazon</td>
+                                            <td class="platform">N/A</td>
                                         </tr>
                                         <tr>
                                             <td>Supplier/Distributor Name</td>
-                                            <td>Cloud Tail</td>
+                                            <td class="supplier">N/A</td>
 
                                         </tr>
                                         <tr>
                                             <td>Date</td>
-                                            <td>28 August, 2018</td>
+                                            <td class="dashboarddate">N/A</td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>Order ID</td>
+                                            <td class="order_id">N/A</td>
+
+                                        </tr>
+
+                                        <tr>
+                                            <td>Mystery Shopper Name</td>
+                                            <td class="txtshopper">N/A</td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>Product Category </td>
+                                            <td class="product_category">N/A</td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>Zone</td>
+                                            <td class="zone">N/A</td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>City</td>
+                                            <td class="selectcity">N/A</td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>MFD/BBD</td>
+                                            <td class="mfd">N/A</td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>Order Date</td>
+                                            <td class="order_date">N/A</td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>Dispatch Date</td>
+                                            <td class="txtdispatch_date">N/A</td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>Delivery Date</td>
+                                            <td class="txtdelivery_date">N/A</td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>Type of Product </td>
+                                            <td class="selectproduct_type">N/A</td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>Product Name </td>
+                                            <td class="product_name">N/A</td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>Batch Code</td>
+                                            <td class="txtbatchcode">N/A</td>
 
                                         </tr>
                                     </tbody>
@@ -254,19 +317,7 @@
                             </div>
                             <div id="questionnaire" class="tab-pane fade">
                                 <table class="table">
-                                    <tbody>
-                                        <tr>
-                                            <td>How many delivery attempts were made ?</td>
-                                            <td>One</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Have you received delivery call ?</td>
-                                            <td>Yes
-                                                <br>
-                                                <span>Remarks</span>
-                                                <span>thumb View or attachment view btn</span>
-                                            </td>
-                                        </tr>
+                                    <tbody id="questions_body">
                                     </tbody>
                                 </table>
                             </div>
@@ -275,7 +326,57 @@
                 </div>
             </section>
             <!-- /.content -->
+            <script>
 
+                var searchParams = new URLSearchParams(window.location.search);
+                var id = searchParams.get('id');
+                console.log(id)
+                if (id) {
+                    $.ajax({
+                        url: localStorage.getItem('BaseUrl') + 'api/orders/' + id,
+                        type: "GET",
+                        crossDoman: true,
+                        headers: {
+                            "Authorization": localStorage.getItem('token')
+                        },
+                        success: function (response) {
+                            // console.log(response)
+                            setValues(response);
+                        },
+                        error: function (xhr, status, error) {
+                            console.log(error);
+                        }
+                    })
+                }
+                function setValues(response) {
+                    $(`.platform`).text(response.platform);
+                    $(`.supplier`).text(response.supplier);
+                    $(`.dashboarddate`).text(response.date.substring(0, 10));
+                    $(`.order_id`).text(response.orderId);
+                    $(`.txtshopper`).text(response.shopperName);
+                    $(`.selectcity`).text(response.city);
+                    $(`.zone`).text(response.zone);
+                    $(`.order_date`).text(response.orderDate.substring(0, 10));
+                    $(`.txtdispatch_date`).text(response.dispatchDate.substring(0, 10));
+                    $(`.txtdelivery_date`).text(response.deliveryDate.substring(0, 10));
+                    $(`.selectproduct_type`).text(response.productType);
+                    $(`.product_name`).text(response.productName);
+                    $(`.product_category`).text(response.productCategory);
+                    $(`.txtbatchcode`).text(response.batchCode);
+                    $(`.mfd`).text(response.mafDate.substring(0, 10));
+                    var rows = "";
+                    for (let i = 0; i < response.questionnaire.length; i++) {
+                        rows = rows + `<tr>
+                                            <td>${response.questionnaire[i].question}</td>
+                                            <td>Answer: ${response.questionnaire[i].answer}<br>
+                                                <span>Remarks: ${response.questionnaire[i].remark ? response.questionnaire[i].remark : 'NA'}</span><br>
+                                                <span>File: ${response.questionnaire[i].file ? response.questionnaire[i].file : 'NA'}</span><br>
+                                            </td>
+                                        </tr>`
+                    }
+                    document.getElementById('questions_body').innerHTML = rows;
+                }
+            </script>
 
         </div>
         <!-- /.content-wrapper -->
@@ -328,7 +429,7 @@
 
     <!-- DataTables -->
     <script src="./Dashboard _ Questionaire App_files/jquery.dataTables.min.js.download"></script>
-    <script src="./Dashboard _ Questionaire App_files/dataTables.bootstrap.min.js.download"></script>
+    <!-- <script src="./Dashboard _ Questionaire App_files/dataTables.bootstrap.min.js.download"></script> -->
 
     <!-- Validate  -->
     <script src="./Dashboard _ Questionaire App_files/jquery.validate.min.js.download"></script>

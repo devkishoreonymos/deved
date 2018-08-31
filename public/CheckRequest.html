@@ -807,7 +807,7 @@
             var parentTag = $(curr).parent().parent();
             var table = $('#example').DataTable();
             var selectedorder = table.row(parentTag).data();
-            window.location = "form_entries_create_update.html?edit=false&id=" + selectedorder._id;
+            window.location = "data_view.html?edit=false&id=" + selectedorder._id;
         }
 
         function ApproveRequest(curr) {
