@@ -102,6 +102,12 @@
         .approve_reject_accept {
             display: none;
         }
+
+        #rejection_text {
+            width: 100%;
+            height: 80px;
+            resize: none;
+        }
     </style>
 
 
@@ -329,7 +335,7 @@
                     </div>
                     <div class="box-body">
                         <button id="btnlogin" type="button" class="btn btn-primary approve_reject_accept" onClick="statusChangeRequest('accepted')">Approve</button>
-                        <button id="btnlogin" type="button" class="btn btn-danger approve_reject_accept" onClick="statusChangeRequest('rejected')">Reject</button>
+                        <button id="btnlogin" type="button" class="btn btn-danger approve_reject_accept" data-toggle="modal" data-target="#myModal" >Reject</button>
                     </div>
                 </div>
             </section>
@@ -342,7 +348,7 @@
                 }
                 var searchParams = new URLSearchParams(window.location.search);
                 var id = searchParams.get('id');
-                console.log(id)
+                console.log("sdasdasd", id)
                 if (id) {
                     $.ajax({
                         url: localStorage.getItem('BaseUrl') + 'api/orders/' + id,
@@ -389,19 +395,24 @@
                     document.getElementById('questions_body').innerHTML = rows;
                 }
 
-                function statusChangeRequest(curr) {
+                function remarkForReject(status) {
+                    var remark = $("#rejection_text").val() || 'NA'
+                    statusChangeRequest(status, { approved: status, remark: remark });
+                }
+
+                function statusChangeRequest(status, data) {
+                    var obj = data ? data : { approved: status };
                     $.ajax({
                         url: localStorage.getItem('BaseUrl') + 'api/orders/' + id,
                         type: "PUT",
                         crossDoman: true,
                         headers: { "Authorization": localStorage.getItem('token') },
-                        crossDoman: true,
-                        data: { approved: curr },
+                        data: obj,
                         success: function (response) {
                             window.location = "CheckRequest.html";
                         },
                         error: function (xhr, status, error) {
-                            console.log(error);
+                            alert('Something Went Wrong ! Try Again.')
                         }
                     })
                 }
@@ -417,7 +428,26 @@
 
     </div>
     <!-- ./wrapper -->
-
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">Remarks for rejection.</h4>
+                </div>
+                <div class="modal-body">
+                    <textarea id="rejection_text"></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onClick="remarkForReject('rejected')">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
     <!-- Vertical form modal -->
     <div id="ajaxModal-html" class="modal fade">
         <div class="modal-dialog">

@@ -627,6 +627,7 @@
                 "deliveryDate",
                 "orderDate",
                 "approved",
+                "remark",
                 "Action",
 
             ]
@@ -764,12 +765,14 @@
                             { "data": "deliveryDate" },
                             { "data": "orderDate" },
                             { "data": "approved" },
+                            { "data": "remark" },
                             { "data": "orderId" }
 
 
                         ],
                         'columnDefs': [{
-                            'targets': [6],
+                            "defaultContent": "-",
+                            'targets': [7],
                             'searchable': false,
                             'orderable': false,
                             'className': 'dt-body-center',
