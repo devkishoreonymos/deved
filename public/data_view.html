@@ -388,7 +388,7 @@
                                             <td>${response.questionnaire[i].question}</td>
                                             <td>Answer: ${response.questionnaire[i].answer}<br>
                                                 <span>Remarks: ${response.questionnaire[i].remark ? response.questionnaire[i].remark : 'NA'}</span><br>
-                                                <span>File: ${response.questionnaire[i].file ? response.questionnaire[i].file : 'NA'}</span><br>
+                                                <span>File: ${response.questionnaire[i].file && response.questionnaire[i].file != 'NA' ? '<a target="_blank" href='+response.questionnaire[i].file+'>File</a>' :  'NA' }</span><br>
                                             </td>
                                         </tr>`
                     }
