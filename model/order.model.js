@@ -20,7 +20,7 @@ let orderSchema = new Schema({
     platform: {type: String, required: true},
     batchCode: {type: String, required: true},
     mafDate: {type: Date, required: true},
-    remark: {type: String},
+    remark: {type: String, default: ""},
     questionnaire: [{
         qno: {type: String},
         question: {type: String},
