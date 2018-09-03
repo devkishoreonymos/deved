@@ -805,20 +805,23 @@
                                 var quesTypes = Object.keys(questions);
                                 for (var k = 0; k < quesTypes.length; k++) {
                                     for (var l = 0; l < questions[quesTypes[k]].length; l++) {
+                                        var ans = "NA";
+                                        var remarks = "NA";
+                                        var file = "NA";
                                         if (questions[quesTypes[k]][l].type == 'Radio') {
-                                            var ans = $(`input[type=radio][name=${questions[quesTypes[k]][l]['name']}]:checked`).val() || 'NA';
+                                            ans = $(`input[type=radio][name=${questions[quesTypes[k]][l]['name']}]:checked`).val() || 'NA';
                                         } else if (questions[quesTypes[k]][l].type == 'Number') {
                                             if (questions[quesTypes[k]][l]['name'] == 'Mentioned_Make') {
-                                                var ans = $(`input[type=number][id="_year"]`).val() || 'NA' ;
+                                                ans = $(`input[type=number][id="_year"]`).val() || 'NA';
                                             } else {
-                                                var ans = $(`input[type=number][name=${questions[quesTypes[k]][l]['name']}]`).val() || 'NA';
+                                                ans = $(`input[type=number][name=${questions[quesTypes[k]][l]['name']}]`).val() || 'NA';
                                             }
                                         }
                                         if (questions[quesTypes[k]][l].remarks) {
-                                            var remarks = $(`textarea[type=text][id=${questions[quesTypes[k]][l]['name']}]`).val() || 'NA';
+                                            remarks = $(`textarea[type=text][id=${questions[quesTypes[k]][l]['name']}]`).val() || 'NA';
                                         }
                                         if (questions[quesTypes[k]][l].file) {
-                                            var file = filesObj[questions[quesTypes[k]][l]['for']] ? filesObj[questions[quesTypes[k]][l]['for']] : 'NA';
+                                            file = filesObj[questions[quesTypes[k]][l]['for']] ? filesObj[questions[quesTypes[k]][l]['for']] : 'NA';
                                         }
                                         questionnaire.push({
                                             qno: questions[quesTypes[k]][l]['for'],
@@ -831,7 +834,6 @@
                                 }
                                 if (oldData && id) {
                                     oldData['questionnaire'] = questionnaire;
-                                    console.log(oldData)
                                     $.ajax({
                                         url: localStorage.getItem('BaseUrl') + 'api/orders/' + id,
                                         type: "PUT",
