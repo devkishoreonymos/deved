@@ -715,7 +715,7 @@
                                             <label for=${questions[sec][i].for}>${questions[sec][i].question}</label>
                                         </div>`;
                                             var form_check = `<div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="number" name=${questions[sec][i].name + '_year'} id="_year" value="" placeholder="Year">
+                                            <input class="form-check-input" type="number" fill="${questions[sec][i].for}" name=${questions[sec][i].name + '_year'} id="_year" value="" placeholder="Year">
                                         </div>`;
                                         } else {
                                             form_group = `<div class="form-group">
@@ -723,7 +723,7 @@
                                             <label for=${questions[sec][i].for}>${questions[sec][i].question}</label>
                                         </div>`;
                                             var form_check = `<div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="number" name=${questions[sec][i].name} id="" value="" placeholder="Total Counts">
+                                            <input class="form-check-input" type="number" fill="${questions[sec][i].for}" name=${questions[sec][i].name} id="" value="" placeholder="Total Counts">
                                         </div>`;
                                         }
                                     }
@@ -810,7 +810,7 @@
                                         var file = "NA";
                                         if (questions[quesTypes[k]][l].type == 'Radio') {
                                             ans = $(`input[type=radio][name=${questions[quesTypes[k]][l]['name']}]:checked`).val() || 'NA';
-                                        } else if (questions[quesTypes[k]][l].type == 'Number') {
+                                        } else if (questions[quesTypes[k]][l].type == 'number') {
                                             if (questions[quesTypes[k]][l]['name'] == 'Mentioned_Make') {
                                                 ans = $(`input[type=number][id="_year"]`).val() || 'NA';
                                             } else {
