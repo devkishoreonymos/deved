@@ -108,7 +108,10 @@ async function getOrdersInExcel(req, res) {
             delete temp.questionnaire;
             mapped.push(temp);
         }
-
+	
+	if (mapped.length === 0) {
+		return res.status(404).json({message: "Not found"})
+	}
         let ws = XLSX.utils.json_to_sheet(mapped, {header: Object.keys(mapped[0])});
 
         if (!fs.existsSync('public/reports')) {
