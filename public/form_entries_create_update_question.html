@@ -729,13 +729,15 @@
                                     }
                                     if (questions[sec][i].file) {
                                         var file = `<div class="form-check form-check-inline">
-                                            <input type="file" name="${questions[sec][i].for}" class="form-control-file" id="${questions[sec][i].name + 'file'}" onchange="fileSelect()">
-                                        </div>`;
+                                            <input type="file" id="${questions[sec][i].for}" class="hidden form-control-file" onchange="fileSelect()" />
+                                            <label class="btn btn-primary" for="${questions[sec][i].for}">Select file</label>
+                                            <p name="${questions[sec][i].for}"></p>
+                                            </div>`;
                                         form_check = form_check + file;
                                     }
                                     if (questions[sec][i].remarks) {
                                         var remarks = `<div class="form-check form-check-inline">
-                                                <textarea class="form-check-input" type="text" id="${questions[sec][i].name}" placeholder="Remarks"></textarea>
+                                                <textarea class="form-check-input" type="text" for="${questions[sec][i].for}" id="${questions[sec][i].name}" placeholder="Remarks"></textarea>
                                             </div>`;
                                         form_check = form_check + remarks;
                                     }
@@ -751,17 +753,29 @@
                                 }
                             }
 
+                            var filesObj = {};
                             function fillData() {
                                 setTimeout(() => {
                                     for (let index = 0; index < questionaireData.length; index++) {
+                                        var qn = questionaireData[index].qno.toString();
                                         if (questionaireData[index].answer != 'NA') {
-                                            var qn = questionaireData[index].qno.toString();
                                             var ans = questionaireData[index].answer.toString();
                                             if ($(`input[fill="${qn}"]`) && $(`input[fill="${qn}"]`)[0] && $(`input[fill="${qn}"]`)[0].type == 'radio') {
                                                 $(`input[fill="${qn}"][value="${ans}"]`).prop('checked', true);
                                             } else {
                                                 $(`input[fill="${qn}"]`).val(ans);
                                             }
+                                        }
+                                        if (questionaireData[index].remark != 'NA') {
+                                            var remark = questionaireData[index].remark.toString();
+                                            if ($(`textarea[for="${qn}"]`) && $(`textarea[for="${qn}"]`)[0]) {
+                                                $(`textarea[for="${qn}"]`).val(remark);
+                                            }
+                                        }
+                                        if (questionaireData[index].file != 'NA') {
+                                            var file = questionaireData[index].file.toString();
+                                            $(`p[name="${qn}"]`).text(`File: ${file}`);
+                                            filesObj[qn] = file;
                                         }
                                     }
                                 }, 2000);
@@ -772,7 +786,6 @@
                                 // remark: "NA"
 
                             };
-                            var filesObj = {};
                             function fileSelect(id) {
                                 console.log(event.target)
                                 var file = event.target; // get file from input
@@ -791,7 +804,8 @@
                                         },
                                         success: function (response) {
                                             console.log(response);
-                                            filesObj[file.name] = response.file;
+                                            filesObj[file.id] = response.file;
+                                            $(`p[name="${file.id}"]`).text(`File: ${response.file}`);
                                         },
                                         error: function (xhr, status, error) {
                                             console.log(error);
