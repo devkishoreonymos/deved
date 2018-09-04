@@ -580,6 +580,7 @@
                             }
 
                             function setValues(response) {
+                                $('.datepicker').datepicker({ format: 'dd MM, yyyy' });
                                 $(`#platform`).val(response.platform).change();
                                 $(`#supplier`).val(response.supplier);
                                 // $(`#dashboarddate`).val(new Date(response.date));
@@ -601,7 +602,7 @@
                                 $('#txtdispatch_date').datepicker("setDate", new Date(response.dispatchDate));
                                 $('#txtdelivery_date').datepicker("setDate", new Date(response.deliveryDate));
                                 $('#mfd').datepicker("setDate", new Date(response.mafDate));
-                                $('.datepicker').datepicker({ format: 'dd MM, yyyy' });
+                                // $('.datepicker').datepicker({ format: 'dd MM, yyyy' });
                                 if (searchParams.get('edit') && searchParams.get('edit') == 'false') {
                                     $(".form-control").attr('disabled', 'true');
                                 }
