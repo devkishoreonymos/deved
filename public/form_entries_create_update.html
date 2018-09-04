@@ -529,7 +529,6 @@
                                     }
                                 })
                             }
-                            getStats();
                             var user = JSON.parse(localStorage.getItem('deved_user'));
                             $('.user_role').text(user.role);
                             var searchParams = new URLSearchParams(window.location.search);
@@ -537,23 +536,39 @@
                             // if (searchParams.get('edit') && searchParams.get('edit') == 'false') {
                             //     $('.edit_btn').toggle();
                             // }
-                            if (id) {
-                                $.ajax({
-                                    url: localStorage.getItem('BaseUrl') + 'api/orders/' + id,
-                                    type: "GET",
-                                    crossDoman: true,
-                                    headers: {
-                                        "Authorization": localStorage.getItem('token')
-                                    },
-                                    success: function (response) {
-                                        console.log(response)
-                                        getCities(response.zone, response);
-                                    },
-                                    error: function (xhr, status, error) {
-                                        console.log(error);
-                                    }
+
+                            $(document).ready(function () {
+                                // var todayDate = new Date();
+                                $('.datepicker').datepicker({
+                                    format: 'dd MM, yyyy',
+                                    autoclose: true
+                                });
+                                // $(".datepicker").datepicker("setDate", todayDate);
+                                //Flat red color scheme for iCheck
+                                $('.icheck-checkbox, .icheck-radio').iCheck({
+                                    checkboxClass: 'icheckbox_flat-green',
+                                    radioClass: 'iradio_flat-green'
                                 })
-                            }
+                                $('.select2').select2()
+                                getStats();
+                                if (id) {
+                                    $.ajax({
+                                        url: localStorage.getItem('BaseUrl') + 'api/orders/' + id,
+                                        type: "GET",
+                                        crossDoman: true,
+                                        headers: {
+                                            "Authorization": localStorage.getItem('token')
+                                        },
+                                        success: function (response) {
+                                            console.log(response)
+                                            getCities(response.zone, response);
+                                        },
+                                        error: function (xhr, status, error) {
+                                            console.log(error);
+                                        }
+                                    })
+                                }
+                            })
                             var citiesData = [];
                             var zoneLast = [];
                             function getCities(zone, data) {
@@ -735,29 +750,6 @@
 
                             localStorage.removeItem('formData');
                         </script>
-
-
-                        <script>
-
-                            $(document).ready(function () {
-                                var todayDate = new Date();
-                                $('.datepicker').datepicker({
-                                    format: 'dd MM, yyyy',
-                                    autoclose: true
-                                });
-                                $(".datepicker").datepicker("setDate", todayDate);
-                                //Flat red color scheme for iCheck
-                                $('.icheck-checkbox, .icheck-radio').iCheck({
-                                    checkboxClass: 'icheckbox_flat-green',
-                                    radioClass: 'iradio_flat-green'
-                                })
-
-                                $('.select2').select2()
-
-                            })
-
-                        </script>
-
 
                     </div>
                 </div>
