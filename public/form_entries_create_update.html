@@ -10,7 +10,7 @@
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
-    
+
 
     <!-- Google Font -->
     <link rel="stylesheet" href="./Dashboard _ Questionaire App_files/css">
@@ -432,8 +432,7 @@
                                             <div class="input-group-addon">
                                                 <i class="fa fa-calendar"></i>
                                             </div>
-                                            <input id="txtdispatch_date" type="text" name="dispatch_date" readonly="" value="" class="form-control datepicker"
-                                                required="">
+                                            <input id="txtdispatch_date" type="text" name="dispatch_date" readonly="" value="" class="form-control datepicker" required="">
                                         </div>
                                     </div>
                                 </div>
@@ -445,8 +444,7 @@
                                             <div class="input-group-addon">
                                                 <i class="fa fa-calendar"></i>
                                             </div>
-                                            <input id="txtdelivery_date" type="text" name="delivery_date" readonly="" value="" class="form-control datepicker"
-                                                required="">
+                                            <input id="txtdelivery_date" type="text" name="delivery_date" readonly="" value="" class="form-control datepicker" required="">
                                         </div>
                                     </div>
                                 </div>
@@ -582,32 +580,30 @@
                             }
 
                             function setValues(response) {
-                                for (var i in response) {
-                                    $(`#platform`).val(response.platform).change();
-                                    $(`#supplier`).val(response.supplier);
-                                    // $(`#dashboarddate`).val(new Date(response.date));
-                                    $(`#order_id`).val(response.orderId);
-                                    $(`#txtshopper`).val(response.shopperName);
-                                    $(`#selectcity`).val(response.city).change();
-                                    $(`#zone`).val(response.zone).change();
-                                    // $(`#order_date`).val(response.orderDate.substring(0, 10));
-                                    // $(`#txtdispatch_date`).val(response.dispatchDate.substring(0, 10));
-                                    // $(`#txtdelivery_date`).val(response.deliveryDate.substring(0, 10));
-                                    $(`#selectproduct_type`).val(response.productType).change();
-                                    $(`#product_name`).val(response.productName).change();
-                                    $(`#product_category`).val(response.productCategory).change();
-                                    $(`#txtbatchcode`).val(response.batchCode);
-                                    // $(`#mfd`).val(response.mafDate.substring(0, 10));
-                                    
-                                    $('#dashboarddate').datepicker("setDate", new Date(response.date));
-                                    $('#order_date').datepicker("setDate", new Date(response.orderDate));
-                                    $('#txtdispatch_date').datepicker("setDate", new Date(response.dispatchDate));
-                                    $('#txtdelivery_date').datepicker("setDate", new Date(response.deliveryDate));
-                                    $('#mfd').datepicker("setDate", new Date(response.mafDate));
-                                }
-                                // $('.datepicker').datepicker({ format: 'dd MM, yyyy' });
+                                $(`#platform`).val(response.platform).change();
+                                $(`#supplier`).val(response.supplier);
+                                // $(`#dashboarddate`).val(new Date(response.date));
+                                $(`#order_id`).val(response.orderId);
+                                $(`#txtshopper`).val(response.shopperName);
+                                $(`#selectcity`).val(response.city).change();
+                                $(`#zone`).val(response.zone).change();
+                                // $(`#order_date`).val(response.orderDate.substring(0, 10));
+                                // $(`#txtdispatch_date`).val(response.dispatchDate.substring(0, 10));
+                                // $(`#txtdelivery_date`).val(response.deliveryDate.substring(0, 10));
+                                $(`#selectproduct_type`).val(response.productType).change();
+                                $(`#product_name`).val(response.productName).change();
+                                $(`#product_category`).val(response.productCategory).change();
+                                $(`#txtbatchcode`).val(response.batchCode);
+                                // $(`#mfd`).val(response.mafDate.substring(0, 10));
+
+                                $('#dashboarddate').datepicker("setDate", new Date(response.date));
+                                $('#order_date').datepicker("setDate", new Date(response.orderDate));
+                                $('#txtdispatch_date').datepicker("setDate", new Date(response.dispatchDate));
+                                $('#txtdelivery_date').datepicker("setDate", new Date(response.deliveryDate));
+                                $('#mfd').datepicker("setDate", new Date(response.mafDate));
+                                $('.datepicker').datepicker({ format: 'dd MM, yyyy' });
                                 if (searchParams.get('edit') && searchParams.get('edit') == 'false') {
-                                    $(".form-control").attr('disabled','true');
+                                    $(".form-control").attr('disabled', 'true');
                                 }
                             }
 
@@ -748,7 +744,7 @@
                                     format: 'dd MM, yyyy',
                                     autoclose: true
                                 });
-                                $(".datepicker").datepicker( "setDate" , todayDate );
+                                $(".datepicker").datepicker("setDate", todayDate);
                                 //Flat red color scheme for iCheck
                                 $('.icheck-checkbox, .icheck-radio').iCheck({
                                     checkboxClass: 'icheckbox_flat-green',
