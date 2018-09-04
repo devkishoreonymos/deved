@@ -328,7 +328,7 @@
                                             <div class="input-group-addon">
                                                 <i class="fa fa-calendar"></i>
                                             </div>
-                                            <input id="dashboarddate" type="text" name="date" readonly="" value="28 August, 2018" class="form-control datepicker" required="">
+                                            <input id="dashboarddate" type="text" name="date" readonly="" value="" class="form-control datepicker" required="">
                                         </div>
                                     </div>
                                 </div>
@@ -405,7 +405,7 @@
                                             <div class="input-group-addon">
                                                 <i class="fa fa-calendar"></i>
                                             </div>
-                                            <input id="mfd" type="text" name="mfd" readonly="" value="28 August, 2018" class="form-control datepicker" required="">
+                                            <input id="mfd" type="text" name="mfd" readonly="" value="" class="form-control datepicker" required="">
                                         </div>
                                     </div>
                                 </div>
@@ -420,8 +420,7 @@
                                             <div class="input-group-addon">
                                                 <i class="fa fa-calendar"></i>
                                             </div>
-                                            <input id="order_date" type="text" name="order_date" readonly="" value="28 August, 2018" class="form-control datepicker"
-                                                min-date="29 July, 2018" required="">
+                                            <input id="order_date" type="text" name="order_date" readonly="" value="" class="form-control datepicker" required="">
                                         </div>
                                     </div>
                                 </div>
@@ -433,7 +432,7 @@
                                             <div class="input-group-addon">
                                                 <i class="fa fa-calendar"></i>
                                             </div>
-                                            <input id="txtdispatch_date" type="text" name="dispatch_date" readonly="" value="28 August, 2018" class="form-control datepicker"
+                                            <input id="txtdispatch_date" type="text" name="dispatch_date" readonly="" value="" class="form-control datepicker"
                                                 required="">
                                         </div>
                                     </div>
@@ -446,7 +445,7 @@
                                             <div class="input-group-addon">
                                                 <i class="fa fa-calendar"></i>
                                             </div>
-                                            <input id="txtdelivery_date" type="text" name="delivery_date" readonly="" value="28 August, 2018" class="form-control datepicker"
+                                            <input id="txtdelivery_date" type="text" name="delivery_date" readonly="" value="" class="form-control datepicker"
                                                 required="">
                                         </div>
                                     </div>
@@ -586,42 +585,48 @@
                                 for (var i in response) {
                                     $(`#platform`).val(response.platform).change();
                                     $(`#supplier`).val(response.supplier);
-                                    $(`#dashboarddate`).val(response.date.substring(0, 10));
+                                    // $(`#dashboarddate`).val(new Date(response.date));
                                     $(`#order_id`).val(response.orderId);
                                     $(`#txtshopper`).val(response.shopperName);
                                     $(`#selectcity`).val(response.city).change();
                                     $(`#zone`).val(response.zone).change();
-                                    $(`#order_date`).val(response.orderDate.substring(0, 10));
-                                    $(`#txtdispatch_date`).val(response.dispatchDate.substring(0, 10));
-                                    $(`#txtdelivery_date`).val(response.deliveryDate.substring(0, 10));
+                                    // $(`#order_date`).val(response.orderDate.substring(0, 10));
+                                    // $(`#txtdispatch_date`).val(response.dispatchDate.substring(0, 10));
+                                    // $(`#txtdelivery_date`).val(response.deliveryDate.substring(0, 10));
                                     $(`#selectproduct_type`).val(response.productType).change();
                                     $(`#product_name`).val(response.productName).change();
                                     $(`#product_category`).val(response.productCategory).change();
                                     $(`#txtbatchcode`).val(response.batchCode);
-                                    $(`#mfd`).val(response.mafDate.substring(0, 10));
+                                    // $(`#mfd`).val(response.mafDate.substring(0, 10));
+                                    
+                                    $('#dashboarddate').datepicker("setDate", new Date(response.date));
+                                    $('#order_date').datepicker("setDate", new Date(response.orderDate));
+                                    $('#txtdispatch_date').datepicker("setDate", new Date(response.dispatchDate));
+                                    $('#txtdelivery_date').datepicker("setDate", new Date(response.deliveryDate));
+                                    $('#mfd').datepicker("setDate", new Date(response.mafDate));
                                 }
-                                $('.datepicker').datepicker({ format: 'dd MM, yyyy' });
+                                // $('.datepicker').datepicker({ format: 'dd MM, yyyy' });
                                 if (searchParams.get('edit') && searchParams.get('edit') == 'false') {
                                     $(".form-control").attr('disabled','true');
                                 }
                             }
 
 
-                            $(document).ready(function () {
+                            // $(document).ready(function () {
 
-                                $('[name=order_date]').on('changeDate', function (date) {
-                                    $("[name=dispatch_date]").datepicker("setStartDate", $(this).val());
-                                })
+                            //     // $('[name=order_date]').on('changeDate', function (date) {
+                            //     //     $("[name=dispatch_date]").datepicker("setDate", $(this).val());
+                            //     // })
 
-                                $('[name=dispatch_date]').on('changeDate', function (date) {
-                                    $("[name=delivery_date]").datepicker("setStartDate", $(this).val());
-                                })
+                            //     // $('[name=dispatch_date]').on('changeDate', function (date) {
+                            //     //     $("[name=delivery_date]").datepicker("setDate", $(this).val());
+                            //     // })
 
-                                $('[name=order_date]').on('changeDate', function (date) {
-                                    $("[name=mfd]").datepicker("setStartDate", $(this).val());
-                                })
+                            //     // $('[name=order_date]').on('changeDate', function (date) {
+                            //     //     $("[name=mfd]").datepicker("setDate", $(this).val());
+                            //     // })
 
-                            })
+                            // })
 
                             function getSuppliers(val) {
                                 var curr = platformobject.filter(x => x.name == val);
@@ -738,12 +743,12 @@
                         <script>
 
                             $(document).ready(function () {
-
+                                var todayDate = new Date();
                                 $('.datepicker').datepicker({
                                     format: 'dd MM, yyyy',
-                                    autoclose: true,
+                                    autoclose: true
                                 });
-
+                                $(".datepicker").datepicker( "setDate" , todayDate );
                                 //Flat red color scheme for iCheck
                                 $('.icheck-checkbox, .icheck-radio').iCheck({
                                     checkboxClass: 'icheckbox_flat-green',

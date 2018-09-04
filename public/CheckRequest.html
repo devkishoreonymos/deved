@@ -792,6 +792,11 @@
                                 <span  class="fa fa-edit ${user.role == 'deo' ? '' : 'accept_btn'}" onClick="editData(this);" style="color:green; margin-right:5px;" aria-hidden="true"></span>`;
 
                             },
+                        }, {
+                            'targets': [3,4],
+                            'render': function (data, type, full, meta) {
+                                return data.substring(0, 10);
+                            }
                         }],
 
 
