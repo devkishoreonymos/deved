@@ -97,7 +97,13 @@ async function getOrdersInExcel(req, res) {
         let mapped = [];
         for (let i = 0; i < orders.length; i++) {
             let temp = orders[i].toObject();
-            for (let j = 0; j < temp.questionnaire.length; j++) {
+
+	    temp.date = formatDate(temp.date);
+            temp.orderDate = formatDate(temp.orderDate);
+            temp.dispatchDate = formatDate(temp.dispatchDate);
+            temp.deliveryDate = formatDate(temp.deliveryDate);
+            
+	    for (let j = 0; j < temp.questionnaire.length; j++) {
                 temp[`${temp.questionnaire[j].qno}: ${temp.questionnaire[j].question}`] =
                     temp.questionnaire[j].answer ? `${temp.questionnaire[j].answer}`: 'NA';
                 temp[`${temp.questionnaire[j].qno}: pic`] = temp.questionnaire[j].file ? `${temp.questionnaire[j].file}`: 'NA';
@@ -131,6 +137,24 @@ async function getOrdersInExcel(req, res) {
         res.status(200).json({message: err});
     }
 }
+
+function formatDate(date) {
+    date = new Date(data);
+    let year = date.getFullYear();
+    let month = date.getMonth() + 1;
+    let dt = date.getDate();
+
+    if (dt < 10) {
+        dt = '0' + dt;
+    }
+
+    if (month < 10) {
+        month = '0' + month;
+    }
+
+    return year + '-' + month + '-' + dt;
+}
+
 
 async function getOrdersStat(req, res) {
     try {
