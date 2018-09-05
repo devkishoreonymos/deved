@@ -102,6 +102,7 @@ async function getOrdersInExcel(req, res) {
             temp.orderDate = formatDate(temp.orderDate);
             temp.dispatchDate = formatDate(temp.dispatchDate);
             temp.deliveryDate = formatDate(temp.deliveryDate);
+	    temp.mafDate = formatDate(temp.mafDate);
             
 	    for (let j = 0; j < temp.questionnaire.length; j++) {
                 temp[`${temp.questionnaire[j].qno}: ${temp.questionnaire[j].question}`] =
@@ -139,7 +140,7 @@ async function getOrdersInExcel(req, res) {
 }
 
 function formatDate(date) {
-    date = new Date(data);
+    date = new Date(date);
     let year = date.getFullYear();
     let month = date.getMonth() + 1;
     let dt = date.getDate();
