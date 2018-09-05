@@ -335,7 +335,7 @@
                     </div>
                     <div class="box-body">
                         <button id="btnlogin" type="button" class="btn btn-primary approve_reject_accept" onClick="statusChangeRequest({ approved: 'accepted', remark: '' })">Approve</button>
-                        <button id="btnlogin" type="button" class="btn btn-danger approve_reject_accept" data-toggle="modal" data-target="#myModal" >Reject</button>
+                        <button id="btnlogin" type="button" class="btn btn-danger approve_reject_accept" data-toggle="modal" data-target="#myModal">Reject</button>
                     </div>
                 </div>
             </section>
@@ -366,29 +366,46 @@
                         }
                     })
                 }
+
+                function getModifiedDate(data) {
+                    var date = new Date(data);
+                    var year = date.getFullYear();
+                    var month = date.getMonth() + 1;
+                    var dt = date.getDate();
+
+                    if (dt < 10) {
+                        dt = '0' + dt;
+                    }
+                    if (month < 10) {
+                        month = '0' + month;
+                    }
+                    return year + '-' + month + '-' + dt;
+                }
                 function setValues(response) {
                     $(`.platform`).text(response.platform);
                     $(`.supplier`).text(response.supplier);
-                    $(`.dashboarddate`).text(response.date.substring(0, 10));
+                    $(`.dashboarddate`).text(getModifiedDate(response.date));
                     $(`.order_id`).text(response.orderId);
                     $(`.txtshopper`).text(response.shopperName);
                     $(`.selectcity`).text(response.city);
                     $(`.zone`).text(response.zone);
-                    $(`.order_date`).text(response.orderDate.substring(0, 10));
-                    $(`.txtdispatch_date`).text(response.dispatchDate.substring(0, 10));
-                    $(`.txtdelivery_date`).text(response.deliveryDate.substring(0, 10));
+                    $(`.order_date`).text(getModifiedDate(response.orderDate));
+                    $(`.txtdispatch_date`).text(getModifiedDate(response.dispatchDate));
+                    $(`.txtdelivery_date`).text(getModifiedDate(response.deliveryDate));
                     $(`.selectproduct_type`).text(response.productType);
                     $(`.product_name`).text(response.productName);
                     $(`.product_category`).text(response.productCategory);
                     $(`.txtbatchcode`).text(response.batchCode);
-                    $(`.mfd`).text(response.mafDate.substring(0, 10));
+                    $(`.mfd`).text(getModifiedDate(response.mafDate));
+
+
                     var rows = "";
                     for (let i = 0; i < response.questionnaire.length; i++) {
                         rows = rows + `<tr>
                                             <td>${response.questionnaire[i].question}</td>
                                             <td>Answer: ${response.questionnaire[i].answer}<br>
                                                 <span>Remarks: ${response.questionnaire[i].remark ? response.questionnaire[i].remark : 'NA'}</span><br>
-                                                <span>File: ${response.questionnaire[i].file && response.questionnaire[i].file != 'NA' ? '<a target="_blank" href='+response.questionnaire[i].file+'>File</a>' :  'NA' }</span><br>
+                                                <span>File: ${response.questionnaire[i].file && response.questionnaire[i].file != 'NA' ? '<a target="_blank" href=' + response.questionnaire[i].file + '>File</a>' : 'NA'}</span><br>
                                             </td>
                                         </tr>`
                     }

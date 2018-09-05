@@ -793,9 +793,20 @@
 
                             },
                         }, {
-                            'targets': [3,4],
+                            'targets': [3, 4],
                             'render': function (data, type, full, meta) {
-                                return data.substring(0, 10);
+                                var date = new Date(data);
+                                var year = date.getFullYear();
+                                var month = date.getMonth() + 1;
+                                var dt = date.getDate();
+
+                                if (dt < 10) {
+                                    dt = '0' + dt;
+                                }
+                                if (month < 10) {
+                                    month = '0' + month;
+                                }
+                                return year + '-' + month + '-' + dt;
                             }
                         }],
 
