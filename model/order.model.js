@@ -11,6 +11,7 @@ let orderSchema = new Schema({
     city: {type: String, required: true},
     townClass: {type: String, required: true},
     zone: {type: String, required: true},
+    originCity:{type:String},
     orderDate: {type: Date, required: true},
     dispatchDate: {type: Date, required: true},
     deliveryDate: {type: Date, required: true},
