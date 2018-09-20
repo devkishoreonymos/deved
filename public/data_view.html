@@ -288,6 +288,11 @@
 
                                         </tr>
                                         <tr>
+                                            <td>Origin City</td>
+                                            <td class="originCity">N/A</td>
+
+                                        </tr>
+                                        <tr>
                                             <td>MFD/BBD</td>
                                             <td class="mfd">N/A</td>
 
@@ -389,6 +394,7 @@
                     $(`.txtshopper`).text(response.shopperName);
                     $(`.selectcity`).text(response.city);
                     $(`.zone`).text(response.zone);
+                    $(`.originCity`).text(response.originCity);
                     $(`.order_date`).text(getModifiedDate(response.orderDate));
                     $(`.txtdispatch_date`).text(getModifiedDate(response.dispatchDate));
                     $(`.txtdelivery_date`).text(getModifiedDate(response.deliveryDate));
