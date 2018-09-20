@@ -303,8 +303,9 @@
                                     <div class="form-group">
                                         <label for="formInput-1" class="control-label">Platform </label>
                                         <br>
-                                        <select name="platform" id="platform" class="form-control select2 select2-hidden-accessible" style="width: 100%;" required=""
-                                            onchange="getSuppliers(this.value)" tabindex="-1" aria-hidden="true">
+                                        <select name="platform" id="platform" class="form-control select2 select2-hidden-accessible"
+                                            style="width: 100%;" required="" onchange="getSuppliers(this.value)"
+                                            tabindex="-1" aria-hidden="true">
 
                                         </select>
                                     </div>
@@ -328,7 +329,8 @@
                                             <div class="input-group-addon">
                                                 <i class="fa fa-calendar"></i>
                                             </div>
-                                            <input id="dashboarddate" type="text" name="date" readonly="" value="" class="form-control datepicker" required="">
+                                            <input id="dashboarddate" type="text" name="date" readonly="" value=""
+                                                class="form-control datepicker" required="">
                                         </div>
                                     </div>
                                 </div>
@@ -339,14 +341,16 @@
                                 <div class="col-sm-4">
                                     <div class="form-group">
                                         <label for="formInput-1" class="control-label">Order ID</label>
-                                        <input id="order_id" type="text" name="order_id" class="form-control" required="" placeholder="" value="">
+                                        <input id="order_id" type="text" name="order_id" class="form-control" required=""
+                                            placeholder="" value="">
                                     </div>
                                 </div>
 
                                 <div class="col-sm-4">
                                     <div class="form-group">
                                         <label for="formInput-1" class="control-label">Mystery Shopper Name</label>
-                                        <input id="txtshopper" type="text" name="shopper" class="form-control" required="" placeholder="" value="">
+                                        <input id="txtshopper" type="text" name="shopper" class="form-control" required=""
+                                            placeholder="" value="">
                                     </div>
                                 </div>
 
@@ -354,8 +358,8 @@
                                     <div class="form-group">
                                         <label for="formInput-1" class="control-label">Product Category </label>
                                         <br>
-                                        <select name="product_category" id="product_category" class="form-control select2 select2-hidden-accessible" style="width: 100%;"
-                                            required="" tabindex="-1" aria-hidden="true">
+                                        <select name="product_category" id="product_category" class="form-control select2 select2-hidden-accessible"
+                                            style="width: 100%;" required="" tabindex="-1" aria-hidden="true">
                                             <option value="">Select Product Category</option>
                                             <option value="Premium Category">Premium Category</option>
                                             <option value="Gifting">Gifting</option>
@@ -374,8 +378,9 @@
                                     <div class="form-group">
                                         <label for="formInput-1" class="control-label">Zone</label>
                                         <br>
-                                        <select name="zone" id="zone" class="form-control select2 select2-hidden-accessible" style="width: 100%;" required="" onchange="getCities(this.value)"
-                                            tabindex="-1" aria-hidden="true">
+                                        <select name="zone" id="zone" class="form-control select2 select2-hidden-accessible"
+                                            style="width: 100%;" required="" onchange="getCities(this.value)" tabindex="-1"
+                                            aria-hidden="true">
                                             <option value="">Select your Zone</option>
                                             <option value="East">East</option>
                                             <option value="West">West</option>
@@ -390,8 +395,8 @@
                                         <label for="formInput-1" class="control-label">City</label>
                                         <br>
                                         <div id="cityList">
-                                            <select id="selectcity" name="city" id="city" class="form-control select2 select2-hidden-accessible" required="" style="width: 100%;"
-                                                tabindex="-1" aria-hidden="true">
+                                            <select id="selectcity" name="city" id="city" class="form-control select2 select2-hidden-accessible"
+                                                required="" style="width: 100%;" tabindex="-1" aria-hidden="true">
                                                 <option value="">Select your City</option>
                                             </select>
                                         </div>
@@ -400,18 +405,26 @@
 
                                 <div class="col-sm-4">
                                     <div class="form-group">
-                                        <label for="formInput-1" class="control-label">MFD/BBD </label>
-                                        <div class="input-group date">
-                                            <div class="input-group-addon">
-                                                <i class="fa fa-calendar"></i>
-                                            </div>
-                                            <input id="mfd" type="text" name="mfd" readonly="" value="" class="form-control datepicker" required="">
-                                        </div>
+                                        <label for="formInput-1" class="control-label">Origin City </label>
+                                        <input id="originCity" type="text" name="originCity" value="" class="form-control"
+                                            required="">
                                     </div>
                                 </div>
 
                             </div>
                             <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label for="formInput-1" class="control-label">MFD/BBD </label>
+                                        <div class="input-group date">
+                                            <div class="input-group-addon">
+                                                <i class="fa fa-calendar"></i>
+                                            </div>
+                                            <input id="mfd" type="text" name="mfd" readonly="" value="" class="form-control datepicker"
+                                                required="">
+                                        </div>
+                                    </div>
+                                </div>
 
                                 <div class="col-sm-4">
                                     <div class="form-group">
@@ -420,7 +433,8 @@
                                             <div class="input-group-addon">
                                                 <i class="fa fa-calendar"></i>
                                             </div>
-                                            <input id="order_date" type="text" name="order_date" readonly="" value="" class="form-control datepicker" required="">
+                                            <input id="order_date" type="text" name="order_date" readonly="" value=""
+                                                class="form-control datepicker" required="">
                                         </div>
                                     </div>
                                 </div>
@@ -432,10 +446,15 @@
                                             <div class="input-group-addon">
                                                 <i class="fa fa-calendar"></i>
                                             </div>
-                                            <input id="txtdispatch_date" type="text" name="dispatch_date" readonly="" value="" class="form-control datepicker" required="">
+                                            <input id="txtdispatch_date" type="text" name="dispatch_date" readonly=""
+                                                value="" class="form-control datepicker" required="">
                                         </div>
                                     </div>
                                 </div>
+
+
+                            </div>
+                            <div class="row">
 
                                 <div class="col-sm-4">
                                     <div class="form-group">
@@ -444,14 +463,11 @@
                                             <div class="input-group-addon">
                                                 <i class="fa fa-calendar"></i>
                                             </div>
-                                            <input id="txtdelivery_date" type="text" name="delivery_date" readonly="" value="" class="form-control datepicker" required="">
+                                            <input id="txtdelivery_date" type="text" name="delivery_date" readonly=""
+                                                value="" class="form-control datepicker" required="">
                                         </div>
                                     </div>
                                 </div>
-
-
-                            </div>
-                            <div class="row">
 
                                 <div class="col-sm-4">
                                     <div class="form-group">
@@ -474,8 +490,8 @@
                                     <div class="form-group">
                                         <label for="formInput-1" class="control-label">Product Name </label>
                                         <br>
-                                        <select name="product_name" id="product_name" class="form-control select2 select2-hidden-accessible" style="width: 100%;"
-                                            required="" tabindex="-1" aria-hidden="true">
+                                        <select name="product_name" id="product_name" class="form-control select2 select2-hidden-accessible"
+                                            style="width: 100%;" required="" tabindex="-1" aria-hidden="true">
                                             <option value="">Select Product</option>
                                             <option value="Silk">Silk</option>
                                             <option value="Bournville">Bournville</option>
@@ -490,7 +506,8 @@
                                 <div class="col-sm-4">
                                     <div class="form-group">
                                         <label for="formInput-1" class="control-label">Batch Code </label>
-                                        <input id="txtbatchcode" type="text" name="batch_code" class="form-control" required="" placeholder="" value="">
+                                        <input id="txtbatchcode" type="text" name="batch_code" class="form-control"
+                                            required="" placeholder="" value="">
                                     </div>
                                 </div>
 
@@ -603,6 +620,7 @@
                                 $(`#txtshopper`).val(response.shopperName);
                                 $(`#selectcity`).val(response.city).change();
                                 $(`#zone`).val(response.zone).change();
+                                $(`#originCity`).val(response.originCity);
                                 // $(`#order_date`).val(response.orderDate.substring(0, 10));
                                 // $(`#txtdispatch_date`).val(response.dispatchDate.substring(0, 10));
                                 // $(`#txtdelivery_date`).val(response.deliveryDate.substring(0, 10));
@@ -722,6 +740,7 @@
                                     shopperName: $(`#txtshopper`).val() || 'NA',
                                     city: $(`#selectcity`).val() || 'NA',
                                     zone: $(`#zone`).val() || 'NA',
+                                    originCity: $(`#originCity`).val() || 'NA',
                                     orderDate: $(`#order_date`).val() ? new Date($(`#order_date`).val()) : 'NA',
                                     dispatchDate: $(`#txtdispatch_date`).val() ? new Date($(`#txtdispatch_date`).val()) : 'NA',
                                     deliveryDate: $(`#txtdelivery_date`).val() ? new Date($(`#txtdelivery_date`).val()) : 'NA',
